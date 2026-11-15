@@ -21,12 +21,12 @@ def cue(sid, word, k=1, offset=0.0):
 # ── Music placements: (file, start, gain_dB, fade_in, fade_out_at(abs), fade_out_len, filters)
 MUSIC = [
     ("M1_coldopen", 0.0, -3, 1.5, 38.6, 0.4, "atempo=0.70"),        # 26.5s of energy stretched to land on "limit" (37.87s)
-    ("M2_atrium", seg["CH01"]["start"], -2, 2.0, 170.0, 3.0, None),
-    ("M3_change", seg["CH03"]["start"], -3, 1.5, 298.5, 2.5, None),
-    ("M4_day", seg["S18"]["start"], -2, 2.0, 334.6, 0.25, None),   # cuts to silence on "dropped"
+    ("M2_atrium", seg["CH01"]["start"] - 2.6, -2, 1.2, 170.0, 3.0, None),
+    ("M3_change", seg["CH03"]["start"], -3, 1.5, 302.0, 3.5, None),
+    ("M4_day", seg["CH04"]["start"] - 1.6, -2, 1.5, 334.6, 0.25, None),   # cuts to silence on "dropped"
     ("M5_memorial", seg["S20"]["start"] + 0.8, -4, 2.5, 361.0, 1.5, None),
-    ("M6_aftermath", seg["CH05"]["start"] + 3.5, -3, 2.0, 477.5, 3.0, None),
-    ("M7_closing", seg["S26"]["start"] + 2.0, -2, 2.0, DUR - 0.2, 4.0, None),
+    ("M6_aftermath", seg["CH05"]["start"] - 0.6, -3, 2.5, 479.0, 3.0, None),
+    ("M7_closing", seg["S26"]["start"] + 2.6, -2, 2.0, DUR - 0.1, 3.0, None),
 ]
 # ── SFX: (file, abs_time, gain_dB)
 def sfx_list():
@@ -34,7 +34,7 @@ def sfx_list():
     for w in ("beam", "bolt", "weld"): L.append(("tick_ui", cue("S01", w), -8))
     L += [("strain_tink", cue("S02", "doubled") - 0.4, -6),
           ("strain_tink", cue("S03", "limit") - 0.9, -3), ("hit_low", cue("S03", "limit") + 0.1, -1),
-          ("whoosh_soft", cue("S03", "limit") + 1.5, -8)]
+          ("whoosh_soft", cue("S03", "limit") + 1.5, -8), ("chapter_tick", cue("S03", "limit") + 2.3, -7)]
     for s in TL["segments"]:
         if s["visual"] == "chapter": L.append(("chapter_tick", s["start"] + 0.05, -6))
     L += [("hall_ambience", cue("S06", "tea") - 0.5, -20),

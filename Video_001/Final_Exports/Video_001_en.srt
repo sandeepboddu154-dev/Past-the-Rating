@@ -1,0 +1,844 @@
+1
+00:00:00,350 --> 00:00:02,630
+Every piece of a building is designed to
+
+2
+00:00:02,670 --> 00:00:03,910
+carry a number.
+
+3
+00:00:03,950 --> 00:00:04,840
+A beam.
+
+4
+00:00:04,990 --> 00:00:05,910
+A bolt.
+
+5
+00:00:05,950 --> 00:00:07,160
+A weld.
+
+6
+00:00:07,230 --> 00:00:09,510
+Each one has a load it's rated for,
+
+7
+00:00:09,550 --> 00:00:11,950
+with a margin on top, in case the world
+
+8
+00:00:11,990 --> 00:00:14,520
+turns out heavier than anyone expected.
+
+9
+00:00:15,308 --> 00:00:18,468
+On a Friday evening in July 1981,
+
+10
+00:00:18,508 --> 00:00:20,628
+in a hotel in Kansas City,
+
+11
+00:00:20,668 --> 00:00:23,348
+one small steel connection was holding up
+
+12
+00:00:23,388 --> 00:00:25,801
+two walkways full of people.
+
+13
+00:00:25,841 --> 00:00:27,548
+It had never been strong enough to meet
+
+14
+00:00:27,588 --> 00:00:28,868
+the building code.
+
+15
+00:00:28,908 --> 00:00:31,508
+And months before, a change on a drawing
+
+16
+00:00:31,548 --> 00:00:33,558
+had doubled what it was being asked to
+
+17
+00:00:33,788 --> 00:00:34,598
+carry.
+
+18
+00:00:35,308 --> 00:00:37,108
+At about five past seven,
+
+19
+00:00:37,148 --> 00:00:38,918
+it reached its limit.
+
+20
+00:00:46,058 --> 00:00:48,658
+The Hyatt Regency Kansas City opened in
+
+21
+00:00:48,698 --> 00:00:50,578
+July 1980.
+
+22
+00:00:50,618 --> 00:00:53,138
+Its centrepiece was a vast atrium,
+
+23
+00:00:53,178 --> 00:00:56,445
+a glass-roofed lobby several storeys high.
+
+24
+00:00:56,485 --> 00:00:58,338
+And crossing it, in mid-air,
+
+25
+00:00:58,378 --> 00:01:01,005
+were three suspended walkways.
+
+26
+00:01:01,045 --> 00:01:03,058
+The second-floor walkway hung directly
+
+27
+00:01:03,098 --> 00:01:05,298
+beneath the one on the fourth floor.
+
+28
+00:01:05,338 --> 00:01:07,698
+The third-floor walkway ran on its own,
+
+29
+00:01:07,738 --> 00:01:09,588
+off to one side.
+
+30
+00:01:10,308 --> 00:01:12,988
+The walkways didn't rest on columns.
+
+31
+00:01:13,028 --> 00:01:15,388
+They hung from the roof on slender steel
+
+32
+00:01:15,428 --> 00:01:17,918
+rods, so they seemed to float across the
+
+33
+00:01:18,148 --> 00:01:18,668
+room.
+
+34
+00:01:18,708 --> 00:01:20,268
+People loved them.
+
+35
+00:01:20,308 --> 00:01:22,108
+From up there, you could look straight
+
+36
+00:01:22,148 --> 00:01:24,478
+down onto the lobby floor.
+
+37
+00:01:25,183 --> 00:01:27,276
+On Friday evenings that summer,
+
+38
+00:01:27,316 --> 00:01:30,343
+the hotel held a tea dance in the atrium.
+
+39
+00:01:30,383 --> 00:01:31,943
+On July the seventeenth,
+
+40
+00:01:31,983 --> 00:01:34,783
+around sixteen hundred people came.
+
+41
+00:01:34,823 --> 00:01:36,983
+Dozens of them stood on the walkways,
+
+42
+00:01:37,023 --> 00:01:39,353
+watching the dancers below.
+
+43
+00:01:42,642 --> 00:01:44,762
+To understand what happened next,
+
+44
+00:01:44,802 --> 00:01:48,012
+you only need to understand one joint.
+
+45
+00:01:48,725 --> 00:01:51,165
+Each walkway was carried by cross-beams
+
+46
+00:01:51,205 --> 00:01:53,005
+called box beams.
+
+47
+00:01:53,045 --> 00:01:55,725
+Each box beam was made from two C-shaped
+
+48
+00:01:55,765 --> 00:01:58,605
+steel channels, welded edge to edge to
+
+49
+00:01:58,645 --> 00:02:00,525
+form a hollow box.
+
+50
+00:02:00,565 --> 00:02:02,845
+A steel rod passed through a hole in that
+
+51
+00:02:02,885 --> 00:02:03,885
+box.
+
+52
+00:02:03,925 --> 00:02:06,445
+Underneath, a nut and a washer held the
+
+53
+00:02:06,485 --> 00:02:07,645
+beam up.
+
+54
+00:02:07,685 --> 00:02:09,885
+All the weight of that section of walkway
+
+55
+00:02:09,925 --> 00:02:12,735
+pressed down onto that one nut.
+
+56
+00:02:13,433 --> 00:02:15,873
+The original design was simple.
+
+57
+00:02:15,913 --> 00:02:18,513
+One long, continuous rod would run from
+
+58
+00:02:18,553 --> 00:02:20,273
+the roof, through the fourth-floor
+
+59
+00:02:20,313 --> 00:02:22,433
+walkway, and straight on down to the
+
+60
+00:02:22,473 --> 00:02:24,273
+second-floor walkway.
+
+61
+00:02:24,313 --> 00:02:27,193
+Each nut carried only one walkway.
+
+62
+00:02:27,233 --> 00:02:29,393
+The rod itself carried both,
+
+63
+00:02:29,433 --> 00:02:32,163
+and steel rods are very good at that.
+
+64
+00:02:32,892 --> 00:02:35,572
+But even this design had a problem.
+
+65
+00:02:35,612 --> 00:02:38,052
+When federal investigators later analysed
+
+66
+00:02:38,092 --> 00:02:40,292
+it, they concluded that the connection
+
+67
+00:02:40,332 --> 00:02:42,052
+would have reached only about sixty
+
+68
+00:02:42,092 --> 00:02:44,612
+percent of the capacity the Kansas City
+
+69
+00:02:44,652 --> 00:02:45,542
+building code
+
+70
+00:02:46,012 --> 00:02:46,772
+expected.
+
+71
+00:02:46,812 --> 00:02:48,372
+Before anything changed,
+
+72
+00:02:48,412 --> 00:02:50,902
+it was already under-rated.
+
+73
+00:02:54,183 --> 00:02:56,703
+A single continuous rod has a practical
+
+74
+00:02:56,743 --> 00:02:57,743
+problem.
+
+75
+00:02:57,783 --> 00:03:00,143
+It's long, and the nut for the fourth
+
+76
+00:03:00,183 --> 00:03:01,983
+floor has to sit somewhere in the middle
+
+77
+00:03:02,023 --> 00:03:02,943
+of it.
+
+78
+00:03:02,983 --> 00:03:05,103
+Getting it there, and building the walkway
+
+79
+00:03:05,143 --> 00:03:07,713
+around it, is awkward work.
+
+80
+00:03:08,433 --> 00:03:11,073
+So during construction, the detail was
+
+81
+00:03:11,113 --> 00:03:12,033
+changed.
+
+82
+00:03:12,073 --> 00:03:14,633
+Instead of one rod, there would be two.
+
+83
+00:03:14,673 --> 00:03:16,873
+The first ran from the roof down to the
+
+84
+00:03:16,913 --> 00:03:18,820
+fourth-floor box beam.
+
+85
+00:03:18,860 --> 00:03:21,673
+A second, separate rod hung from that same
+
+86
+00:03:21,713 --> 00:03:23,593
+box beam, down to the second-floor
+
+87
+00:03:23,633 --> 00:03:24,793
+walkway.
+
+88
+00:03:24,833 --> 00:03:27,353
+On paper, the two arrangements look almost
+
+89
+00:03:27,393 --> 00:03:28,843
+identical.
+
+90
+00:03:29,558 --> 00:03:31,278
+But follow the load.
+
+91
+00:03:31,318 --> 00:03:33,758
+The second-floor walkway no longer hangs
+
+92
+00:03:33,798 --> 00:03:34,798
+from the roof.
+
+93
+00:03:34,838 --> 00:03:37,358
+It hangs from the fourth-floor walkway.
+
+94
+00:03:37,398 --> 00:03:39,998
+So the nut under the fourth-floor box beam
+
+95
+00:03:40,038 --> 00:03:41,918
+now carries the fourth floor,
+
+96
+00:03:41,958 --> 00:03:44,448
+and everything hanging beneath it.
+
+97
+00:03:45,142 --> 00:03:47,582
+Picture two climbers on a rope.
+
+98
+00:03:47,622 --> 00:03:49,182
+Each one holds the rope,
+
+99
+00:03:49,222 --> 00:03:51,982
+and each grip carries one person.
+
+100
+00:03:52,022 --> 00:03:54,169
+Now the lower climber lets go,
+
+101
+00:03:54,209 --> 00:03:56,222
+and holds on to the upper climber's ankles
+
+102
+00:03:56,262 --> 00:03:57,502
+instead.
+
+103
+00:03:57,542 --> 00:03:59,742
+Nothing about the rope has changed.
+
+104
+00:03:59,782 --> 00:04:01,822
+But the upper climber's grip is now
+
+105
+00:04:01,862 --> 00:04:03,632
+holding two people.
+
+106
+00:04:04,350 --> 00:04:06,817
+That was the fourth-floor connection.
+
+107
+00:04:06,857 --> 00:04:09,390
+A joint that was already under-rated was
+
+108
+00:04:09,430 --> 00:04:12,040
+now being asked to carry roughly twice the
+
+109
+00:04:12,310 --> 00:04:13,160
+load.
+
+110
+00:04:13,850 --> 00:04:17,170
+So how did a change like that get through?
+
+111
+00:04:17,210 --> 00:04:19,860
+The steel fabricator proposed the two-rod
+
+112
+00:04:19,970 --> 00:04:22,610
+detail and prepared the shop drawings.
+
+113
+00:04:22,650 --> 00:04:24,610
+Those drawings went back to the structural
+
+114
+00:04:24,650 --> 00:04:27,140
+engineers, and returned with their review
+
+115
+00:04:27,410 --> 00:04:27,970
+stamp.
+
+116
+00:04:28,010 --> 00:04:29,570
+What was said along the way,
+
+117
+00:04:29,610 --> 00:04:31,730
+including a disputed phone call,
+
+118
+00:04:31,770 --> 00:04:33,490
+became one of the most argued-over
+
+119
+00:04:33,530 --> 00:04:36,210
+questions in engineering ethics.
+
+120
+00:04:36,250 --> 00:04:38,650
+What the investigations made clear is that
+
+121
+00:04:38,690 --> 00:04:40,690
+the connection was never checked against
+
+122
+00:04:40,730 --> 00:04:42,580
+the doubled load.
+
+123
+00:04:43,308 --> 00:04:45,668
+And there had been a warning sign.
+
+124
+00:04:45,708 --> 00:04:47,908
+While the hotel was still being built,
+
+125
+00:04:47,948 --> 00:04:50,668
+part of the atrium roof collapsed.
+
+126
+00:04:50,708 --> 00:04:52,068
+Nobody was killed.
+
+127
+00:04:52,108 --> 00:04:53,748
+The engineers investigated,
+
+128
+00:04:53,788 --> 00:04:55,708
+and assured the owner of the atrium's
+
+129
+00:04:55,748 --> 00:04:56,708
+safety.
+
+130
+00:04:56,748 --> 00:04:58,988
+The flaw in the walkway connections was
+
+131
+00:04:59,028 --> 00:05:00,678
+not caught.
+
+132
+00:05:03,975 --> 00:05:06,095
+Friday, July the seventeenth,
+
+133
+00:05:06,135 --> 00:05:08,015
+1981.
+
+134
+00:05:08,055 --> 00:05:09,935
+The atrium is full.
+
+135
+00:05:09,975 --> 00:05:11,855
+There's music, and there are people on the
+
+136
+00:05:11,895 --> 00:05:14,655
+floor, and on the walkways above.
+
+137
+00:05:14,695 --> 00:05:16,815
+The fourth-floor walkway is carrying its
+
+138
+00:05:16,855 --> 00:05:19,335
+own crowd, and the entire second-floor
+
+139
+00:05:19,375 --> 00:05:22,465
+walkway below it, with its crowd too.
+
+140
+00:05:23,183 --> 00:05:25,623
+At about five past seven in the evening,
+
+141
+00:05:25,663 --> 00:05:27,543
+at the fourth-floor box beams,
+
+142
+00:05:27,583 --> 00:05:29,863
+the welded seams split.
+
+143
+00:05:29,903 --> 00:05:31,903
+The nuts and washers pulled straight
+
+144
+00:05:31,943 --> 00:05:33,303
+through the steel.
+
+145
+00:05:33,343 --> 00:05:35,583
+The fourth-floor walkway dropped onto the
+
+146
+00:05:35,623 --> 00:05:38,023
+second-floor walkway, and both fell onto
+
+147
+00:05:38,063 --> 00:05:40,393
+the crowded lobby below.
+
+148
+00:05:45,625 --> 00:05:48,385
+One hundred and fourteen people died.
+
+149
+00:05:48,425 --> 00:05:50,945
+Two hundred and sixteen were injured.
+
+150
+00:05:50,985 --> 00:05:53,265
+Rescuers worked through the night to reach
+
+151
+00:05:53,305 --> 00:05:55,345
+those trapped beneath the wreckage.
+
+152
+00:05:55,385 --> 00:05:57,425
+It was the deadliest structural collapse
+
+153
+00:05:57,465 --> 00:06:01,155
+in American history, until 2001.
+
+154
+00:06:04,433 --> 00:06:06,553
+The National Bureau of Standards,
+
+155
+00:06:06,593 --> 00:06:09,033
+known today as NIST, led the federal
+
+156
+00:06:09,073 --> 00:06:10,553
+investigation.
+
+157
+00:06:10,593 --> 00:06:12,713
+Its engineers recovered the hanger rods
+
+158
+00:06:12,753 --> 00:06:15,483
+and box beams, and load-tested matching
+
+159
+00:06:15,553 --> 00:06:17,593
+connections in the laboratory.
+
+160
+00:06:17,633 --> 00:06:19,673
+Their conclusion was stark.
+
+161
+00:06:19,713 --> 00:06:21,473
+The load on the connection at the moment
+
+162
+00:06:21,513 --> 00:06:24,113
+of collapse was only about thirty-one
+
+163
+00:06:24,153 --> 00:06:25,993
+percent of what a connection designed to
+
+164
+00:06:26,033 --> 00:06:28,313
+the Kansas City code should have been able
+
+165
+00:06:28,353 --> 00:06:29,803
+to hold.
+
+166
+00:06:30,517 --> 00:06:32,877
+In other words, this was not a structure
+
+167
+00:06:32,917 --> 00:06:35,917
+pushed past its rating by a freak event.
+
+168
+00:06:35,957 --> 00:06:38,317
+Its rating had been quietly cut,
+
+169
+00:06:38,357 --> 00:06:41,407
+long before the crowd ever arrived.
+
+170
+00:06:44,725 --> 00:06:47,725
+So who decided, and who paid?
+
+171
+00:06:47,765 --> 00:06:49,965
+The change made one detail simpler to
+
+172
+00:06:50,005 --> 00:06:51,965
+fabricate and install.
+
+173
+00:06:52,005 --> 00:06:54,285
+That was the entire upside.
+
+174
+00:06:54,325 --> 00:06:56,765
+The downside was a wave of lawsuits from
+
+175
+00:06:56,805 --> 00:06:58,925
+victims and their families.
+
+176
+00:06:58,965 --> 00:07:01,525
+Missouri's licensing authorities found the
+
+177
+00:07:01,565 --> 00:07:03,485
+engineer of record and the project
+
+178
+00:07:03,525 --> 00:07:05,805
+engineer grossly negligent.
+
+179
+00:07:05,845 --> 00:07:08,085
+Both lost their engineering licences in
+
+180
+00:07:08,125 --> 00:07:10,255
+Missouri, and their firm lost its
+
+181
+00:07:10,325 --> 00:07:12,125
+certificate to practise engineering in the
+
+182
+00:07:12,165 --> 00:07:13,455
+state.
+
+183
+00:07:14,183 --> 00:07:16,623
+Engineering ethics courses still debate
+
+184
+00:07:16,663 --> 00:07:18,543
+how the responsibility should have been
+
+185
+00:07:18,583 --> 00:07:19,583
+shared.
+
+186
+00:07:19,623 --> 00:07:21,583
+But the lesson the profession took was
+
+187
+00:07:21,623 --> 00:07:22,543
+blunt.
+
+188
+00:07:22,583 --> 00:07:26,033
+If your stamp is on it, it's yours.
+
+189
+00:07:29,433 --> 00:07:32,113
+After Kansas City, the industry tightened
+
+190
+00:07:32,153 --> 00:07:34,353
+how connection designs and shop drawings
+
+191
+00:07:34,393 --> 00:07:35,843
+are reviewed.
+
+192
+00:07:35,913 --> 00:07:38,513
+Today, a change like that two-rod detail
+
+193
+00:07:38,553 --> 00:07:40,033
+is supposed to trigger a fresh
+
+194
+00:07:40,073 --> 00:07:42,913
+calculation, not just a stamp.
+
+195
+00:07:42,953 --> 00:07:45,353
+The Hyatt Regency is now taught in
+
+196
+00:07:45,393 --> 00:07:47,353
+engineering ethics classes across the
+
+197
+00:07:47,393 --> 00:07:48,780
+United States.
+
+198
+00:07:48,820 --> 00:07:50,993
+Not because the physics is complicated.
+
+199
+00:07:51,033 --> 00:07:53,473
+It's one rod, two nuts, and a load that
+
+200
+00:07:53,513 --> 00:07:54,433
+doubled.
+
+201
+00:07:54,473 --> 00:07:56,673
+It's taught because the number was always
+
+202
+00:07:56,713 --> 00:07:58,483
+there to be checked.
+
+203
+00:07:59,183 --> 00:08:01,383
+Every structure around you was built to
+
+204
+00:08:01,423 --> 00:08:02,823
+carry a number.
+
+205
+00:08:02,863 --> 00:08:04,983
+Most of the time, there's a margin on top
+
+206
+00:08:05,023 --> 00:08:07,063
+of it that you'll never see.
+
+207
+00:08:07,103 --> 00:08:09,543
+The question is always the same.
+
+208
+00:08:09,583 --> 00:08:13,193
+How far past the rating can it really go?
+
+209
+00:08:16,267 --> 00:08:18,227
+If you want the next investigation,
+
+210
+00:08:18,267 --> 00:08:19,347
+subscribe.
+
+211
+00:08:19,387 --> 00:08:21,557
+There's a new one every week.
+

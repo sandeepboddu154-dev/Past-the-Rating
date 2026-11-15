@@ -60,6 +60,7 @@ function ratingBar(x,y,W,{value=0,rated=100,max=160,label='RATED',unit='%',num=t
 }
 function chip(x,y,s,{col=C.orange,op=1,size=26}={}){ if(op<=0)return ''; const z=size*1.4; const w=s.length*z*.66+44;
   return `<g opacity="${R(op)}"><rect x="${x}" y="${y}" width="${R(w)}" height="${R(z*1.7)}" fill="none" stroke="${col}" stroke-width="3"/>${T(x+22,y+z*1.18,s,{size,fill:col,w:800,ls:2,caps:true})}</g>`;}
+function plate(x,y,w,h,op=1){ return op<=0?'':`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${C.carbon}" opacity="${R(.94*op)}"/>`; }
 function kicker(s,op=1,y=150){ return T(160,y,s,{size:30,fill:C.steel,w:800,ls:6,caps:true,op}); }
 function logo(x,y,s,op=1){ return `<g transform="translate(${x} ${y}) scale(${s/100})" opacity="${R(op)}">
   <path d="M22 22 H74 L66 30 H30 V66 L22 74 Z" fill="${C.steel}"/><path d="M78 26 V78 H26 L34 70 H70 V34 Z" fill="${C.steel}"/>
@@ -163,10 +164,11 @@ S.coldopen_rod=(t,d,c)=>{
 S.coldopen_date=(t,d,c)=>{
   const ck=c('connection'),cn=c('never'),cd=c('doubled');
   let s=atrium({draw:eo(P(t,0,3)),dim:.55,labels:0,highlight:P(t,ck,ck+.8)});
+  s+=plate(140,100,380,140,eo(P(t,.2,1)));
   s+=T(160,150,'KANSAS CITY',{size:30,fill:C.steel,w:800,ls:6,op:eo(P(t,.2,1))});
   s+=T(160,214,'JULY 1981',{size:64,w:900,op:eo(P(t,.4,1.3))});
-  s+=chip(160,950,'Below code',{op:eo(P(t,cn,cn+.5))});
-  s+=fade(T(1500,1000,'2×',{size:170,mono:true,fill:C.orange,anchor:'middle'}),eo(P(t,cd,cd+.4)));
+  s+=chip(160,860,'Below code',{op:eo(P(t,cn,cn+.5))});
+  s+=fade(T(1560,820,'2×',{size:170,mono:true,fill:C.orange,anchor:'middle'}),eo(P(t,cd,cd+.4)));
   return cam(s,1+.05*eio(t/d),660,445);
 };
 S.coldopen_limit=(t,d,c)=>{
@@ -183,7 +185,8 @@ S.coldopen_limit=(t,d,c)=>{
 S.atrium_build=(t,d,c)=>{
   const c4=c('second'),c3=c('third');
   let s=atrium({draw:eo(P(t,.3,9)),labels:1});
-  s+=T(160,1010,'HYATT REGENCY KANSAS CITY · OPENED JULY 1980',{size:26,fill:C.dim,w:800,ls:4,op:eo(P(t,.5,1.5))});
+  s+=plate(140,108,1110,58,eo(P(t,.5,1.5)));
+  s+=T(160,150,'HYATT REGENCY KANSAS CITY · OPENED JULY 1980',{size:26,fill:C.steel,w:800,ls:4,op:eo(P(t,.5,1.5))});
   s+=fade(`<rect x="${A.w4.x-14}" y="${A.w4.y-14}" width="${A.w4.w+28}" height="${A.w2.y-A.w4.y+58}" fill="none" stroke="${C.orange}" stroke-width="3" stroke-dasharray="14 10"/>`+
     T(A.w4.x-30,A.w4.y+120,'STACKED',{size:24,fill:C.orange,anchor:'end',w:800,ls:4}),eo(P(t,c4,c4+.6))*(1-P(t,c3,c3+.5)*.6));
   s+=fade(`<rect x="${A.w3.x-14}" y="${A.w3.y-14}" width="${A.w3.w+28}" height="58" fill="none" stroke="${C.steel}" stroke-width="3" stroke-dasharray="14 10"/>`,eo(P(t,c3,c3+.6)));
@@ -201,6 +204,7 @@ S.atrium_rods=(t,d,c)=>{
 S.atrium_crowd=(t,d,c)=>{
   const cs=c('sixteen'),cd=c('dozens');
   let s=atrium({labels:0,crowd:eo(P(t,cs-.6,cs+2.5)),crowdT:t});
+  s+=plate(140,108,470,58,eo(P(t,.2,1)))+plate(140,170,470,150,eo(P(t,cs-.3,cs+.2)));
   s+=T(160,150,'FRIDAY TEA DANCE',{size:30,fill:C.steel,w:800,ls:6,op:eo(P(t,.2,1))});
   s+=fade(T(160,250,`≈ ${Math.round(1600*eo(P(t,cs-.2,cs+1.6))).toLocaleString('en-US')}`,{size:110,mono:true})+T(160,300,'PEOPLE IN THE ATRIUM',{size:24,fill:C.dim,w:800,ls:4}),eo(P(t,cs-.3,cs+.2)));
   s+=fade(`<rect x="${A.w4.x-14}" y="${A.w4.y-40}" width="${A.w4.w+28}" height="78" fill="none" stroke="${C.orange}" stroke-width="3" stroke-dasharray="14 10"/><rect x="${A.w2.x-14}" y="${A.w2.y-40}" width="${A.w2.w+28}" height="78" fill="none" stroke="${C.orange}" stroke-width="3" stroke-dasharray="14 10"/>`,eo(P(t,cd,cd+.6)));
@@ -353,16 +357,18 @@ S.roof_warning=(t,d,c)=>{
   let s=atrium({labels:0,dim:.8});
   // roof breach
   s+=fade(`<path d="M1120 ${A.roofY} l40 70 l-30 40 l50 60" stroke="${C.orange}" stroke-width="6" fill="none"/>`+`<rect x="1050" y="${A.roofY-50}" width="260" height="60" fill="${C.carbon}" opacity=".7"/>`,eo(P(t,cr,cr+.5)));
+  s+=plate(140,108,560,58,eo(P(t,.2,1)));
   s+=T(160,150,'DURING CONSTRUCTION',{size:30,fill:C.steel,w:800,ls:6,op:eo(P(t,.2,1))});
   s+=chip(1080,250,'Part of atrium roof collapses',{op:eo(P(t,cr+.2,cr+.7))});
   s+=chip(1080,320,'No deaths',{col:C.steel,op:eo(P(t,cn,cn+.5))});
-  s+=chip(160,950,'Atrium declared safe',{col:C.steel,op:eo(P(t,ca,ca+.5))});
+  s+=chip(160,880,'Atrium declared safe',{col:C.steel,op:eo(P(t,ca,ca+.5))});
   s+=fade(`<circle cx="${A.rods[0]}" cy="${A.w4.y+15}" r="60" fill="none" stroke="${C.orange}" stroke-width="5"/>`+T(A.rods[0],A.w4.y-70,'NOT CAUGHT',{size:26,fill:C.orange,w:800,anchor:'middle',ls:4}),eo(P(t,cf,cf+.5)));
   return cam(s,lerp(1.0,1.05,eio(t/d)),960,400);
 };
 S.the_day=(t,d,c)=>{
   let s=atrium({labels:0,dim:.75,crowd:1,crowdT:t,asBuilt:true});
   const mins=Math.floor(lerp(0,6,P(t,0,d)));
+  s+=plate(140,108,600,58,eo(P(t,.2,1)))+plate(1440,92,340,80,eo(P(t,.5,1.3)));
   s+=T(160,150,'FRIDAY · JULY 17, 1981',{size:30,fill:C.steel,w:800,ls:6,op:eo(P(t,.2,1))});
   s+=T(1760,150,`6:5${Math.min(9,4+mins)} PM`,{size:56,mono:true,anchor:'end',op:eo(P(t,.5,1.3))});
   const cf=c('fourthfloor')||c('fourth');
