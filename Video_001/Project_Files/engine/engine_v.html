@@ -336,17 +336,18 @@ function doc(x,y,title,sub,{op=1,col=C.steel}={}){ if(op<=0)return ''; return `<
   ${[0,1,2,3,4,5].map(i=>`<rect x="${x+30}" y="${y+150+i*30}" width="${i%2?180:240}" height="8" fill="${C.dim}" opacity=".6"/>`).join('')}
   ${T(x+30,y+70,title,{size:28,w:900,ls:2,caps:true})}${T(x+30,y+110,sub,{size:20,fill:C.dim,w:800,ls:2,caps:true})}</g>`;}
 S.paper_trail=(t,d,c)=>{
-  const cf=c('fabricator'),cs=c('drawings'),cr=c('stamp'),cp=c('phone'),cn=c('never');
-  let s=kicker('The paper trail',eo(P(t,.2,1)));
+  const H=(x)=>x>0?x:1e9; // missing cue → never shown (vertical edits rewrite the narration)
+  const cf=Math.max(0,(c('fabricator')||.2)-1.2),cs=H(c('drawings')),cr=H(c('stamp')||c('stamped')),cp=H(c('phone')),cn=H(c('never'));
+  let s='';
   s+=doc(180,300,'Fabricator','Proposes two rods',{op:eo(P(t,cf,cf+.6))});
   s+=fade(`<path d="M500 490 H600" stroke="${C.steel}" stroke-width="4" marker-end="url(#arr)"/>`,eo(P(t,cs-.3,cs)));
   s+=doc(620,300,'Shop drawings','Two-rod detail',{op:eo(P(t,cs,cs+.6))});
-  s+=fade(`<path d="M940 490 H1040" stroke="${C.steel}" stroke-width="4" marker-end="url(#arr)"/>`,eo(P(t,cr-1,cr-.6)));
-  s+=doc(1060,300,'Engineers','Review',{op:eo(P(t,cr-.8,cr-.2))});
-  const sp=P(t,cr||c('stamped'),(cr||c('stamped'))+.35); if(sp>0) s+=`<g transform="translate(1210 560) rotate(-12) scale(${R(lerp(1.6,1,eo(sp)))})" opacity="${R(eo(sp))}"><rect x="-120" y="-40" width="240" height="80" fill="none" stroke="${C.orange}" stroke-width="6"/>${T(0,14,'REVIEWED',{size:38,w:900,fill:C.orange,anchor:'middle',ls:4})}</g>`;
+  s+=fade(`<path d="M940 490 H1040" stroke="${C.steel}" stroke-width="4" marker-end="url(#arr)"/>`,eo(P(t,cs+.8,cs+1.2)));
+  s+=doc(1060,300,'Engineers','Review',{op:eo(P(t,cs+.9,cs+1.5))});
+  const sp=P(t,cr,cr+.35); if(sp>0) s+=`<g transform="translate(1210 560) rotate(-12) scale(${R(lerp(1.6,1,eo(sp)))})" opacity="${R(eo(sp))}"><rect x="-120" y="-40" width="240" height="80" fill="none" stroke="${C.orange}" stroke-width="6"/>${T(0,14,'REVIEWED',{size:38,w:900,fill:C.orange,anchor:'middle',ls:4})}</g>`;
   s+=fade(`<g transform="translate(1500 380)"><rect x="0" y="0" width="90" height="150" rx="16" fill="none" stroke="${C.steel}" stroke-width="5"/><circle cx="45" cy="128" r="8" fill="${C.steel}"/>${T(140,100,'?',{size:110,w:900,fill:C.orange})}</g>`+T(1500,600,'DISPUTED CALL',{size:22,fill:C.steel,w:800,ls:4}),eo(P(t,cp,cp+.5)));
   s+=chip(180,830,'Connection never checked for 2× load',{op:eo(P(t,cn,cn+.6))});
-  return cam(s,1.08+.03*t/d,960,560);
+  return s;
 };
 S.roof_warning=(t,d,c)=>{
   const cr=c('roof'),cn=c('nobody'),ca=c('assured'),cf=c('flaw');

@@ -20,9 +20,9 @@
    "id": "C1",
    "visual": "split_compare",
    "focus": [
-    960,
+    900,
     560,
-    1500
+    1800
    ],
    "vo": "Who's responsible when a drawing gets changed?"
   },
@@ -30,9 +30,9 @@
    "id": "C2",
    "visual": "paper_trail",
    "focus": [
-    930,
+    900,
     560,
-    1600
+    1500
    ],
    "vo": "In 1981, a steel fabricator proposed splitting one rod into two on the Hyatt Regency's walkways. The shop drawings went to the engineers, and came back stamped."
   },
