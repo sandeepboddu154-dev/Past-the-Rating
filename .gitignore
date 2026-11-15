@@ -1,0 +1,10 @@
+# Large/regenerable render outputs (rebuild with Video_001/Project_Files pipeline)
+Video_001/Visual_Assets/segments/
+Video_001/Shorts/*/segments/
+Video_001/Project_Files/mix/
+Video_001/Shorts/*/mix.wav
+Video_001/Shorts/*/premix.wav
+*.mp4
+*.tmp.mp4
+Video_001/Project_Files/*.log
+Video_001/Project_Files/probe/

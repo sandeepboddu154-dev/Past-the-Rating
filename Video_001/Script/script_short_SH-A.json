@@ -1,0 +1,90 @@
+{
+ "title": [
+  "ONE CHANGE.",
+  "DOUBLE THE LOAD."
+ ],
+ "voice": {
+  "name": "George",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_v4",
+  "settings": {
+   "stability": 0.45,
+   "similarity_boost": 0.8,
+   "style": 0.2,
+   "use_speaker_boost": true,
+   "speed": 1.0
+  }
+ },
+ "scenes": [
+  {
+   "id": "A1",
+   "visual": "coldopen_date",
+   "focus": [
+    900,
+    520,
+    1550
+   ],
+   "vo": "Two walkways. One drawing change. Double the load."
+  },
+  {
+   "id": "A2",
+   "visual": "atrium_rods",
+   "focus": [
+    980,
+    500,
+    1400
+   ],
+   "vo": "Kansas City, 1981. The hotel's skywalks hang from steel rods."
+  },
+  {
+   "id": "A3",
+   "visual": "original_rod",
+   "focus": [
+    960,
+    500,
+    1150
+   ],
+   "vo": "The design: one long rod through both walkways. Each nut holds one walkway."
+  },
+  {
+   "id": "A4",
+   "visual": "split_compare",
+   "focus": [
+    960,
+    560,
+    1500
+   ],
+   "vo": "The change: two shorter rods. On paper, almost identical."
+  },
+  {
+   "id": "A5",
+   "visual": "load_flow",
+   "focus": [
+    960,
+    480,
+    1300
+   ],
+   "vo": "Now the lower walkway hangs from the upper one. That one nut carries both."
+  },
+  {
+   "id": "A6",
+   "visual": "bar_double",
+   "focus": [
+    900,
+    560,
+    1350
+   ],
+   "vo": "A connection that was already below code now carried twice the load."
+  },
+  {
+   "id": "A7",
+   "visual": "cta",
+   "focus": [
+    960,
+    540,
+    1300
+   ],
+   "vo": "It failed in July 1981. Full investigation on our channel."
+  }
+ ]
+}

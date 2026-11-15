@@ -1,0 +1,218 @@
+{
+ "hash": "3dd45db019ae",
+ "id": "S19",
+ "text": "At about five past seven in the evening, at the fourth-floor box beams, the welded seams split. The nuts and washers pulled straight through the steel. The fourth-floor walkway dropped onto the second-floor walkway, and both fell onto the crowded lobby below.",
+ "duration": 16.927347,
+ "words": [
+  {
+   "w": "At",
+   "s": 0.0,
+   "e": 0.08
+  },
+  {
+   "w": "about",
+   "s": 0.16,
+   "e": 0.48
+  },
+  {
+   "w": "five",
+   "s": 0.56,
+   "e": 0.8
+  },
+  {
+   "w": "past",
+   "s": 0.96,
+   "e": 1.12
+  },
+  {
+   "w": "seven",
+   "s": 1.2,
+   "e": 1.44
+  },
+  {
+   "w": "in",
+   "s": 1.48,
+   "e": 1.52
+  },
+  {
+   "w": "the",
+   "s": 1.6,
+   "e": 1.68
+  },
+  {
+   "w": "evening,",
+   "s": 1.76,
+   "e": 2.44
+  },
+  {
+   "w": "at",
+   "s": 2.48,
+   "e": 2.56
+  },
+  {
+   "w": "the",
+   "s": 2.64,
+   "e": 2.72
+  },
+  {
+   "w": "fourth-floor",
+   "s": 2.8,
+   "e": 3.36
+  },
+  {
+   "w": "box",
+   "s": 3.52,
+   "e": 3.68
+  },
+  {
+   "w": "beams,",
+   "s": 3.76,
+   "e": 4.36
+  },
+  {
+   "w": "the",
+   "s": 4.4,
+   "e": 4.48
+  },
+  {
+   "w": "welded",
+   "s": 4.52,
+   "e": 4.96
+  },
+  {
+   "w": "seams",
+   "s": 5.04,
+   "e": 5.6
+  },
+  {
+   "w": "split.",
+   "s": 5.68,
+   "e": 6.68
+  },
+  {
+   "w": "The",
+   "s": 6.72,
+   "e": 6.8
+  },
+  {
+   "w": "nuts",
+   "s": 6.88,
+   "e": 7.12
+  },
+  {
+   "w": "and",
+   "s": 7.2,
+   "e": 7.36
+  },
+  {
+   "w": "washers",
+   "s": 7.44,
+   "e": 7.92
+  },
+  {
+   "w": "pulled",
+   "s": 7.96,
+   "e": 8.24
+  },
+  {
+   "w": "straight",
+   "s": 8.4,
+   "e": 8.64
+  },
+  {
+   "w": "through",
+   "s": 8.76,
+   "e": 8.88
+  },
+  {
+   "w": "the",
+   "s": 8.96,
+   "e": 9.04
+  },
+  {
+   "w": "steel.",
+   "s": 9.12,
+   "e": 10.12
+  },
+  {
+   "w": "The",
+   "s": 10.16,
+   "e": 10.24
+  },
+  {
+   "w": "fourth-floor",
+   "s": 10.32,
+   "e": 10.88
+  },
+  {
+   "w": "walkway",
+   "s": 11.0,
+   "e": 11.44
+  },
+  {
+   "w": "dropped",
+   "s": 11.52,
+   "e": 11.84
+  },
+  {
+   "w": "onto",
+   "s": 11.92,
+   "e": 12.08
+  },
+  {
+   "w": "the",
+   "s": 12.16,
+   "e": 12.24
+  },
+  {
+   "w": "second-floor",
+   "s": 12.44,
+   "e": 12.88
+  },
+  {
+   "w": "walkway,",
+   "s": 13.04,
+   "e": 13.76
+  },
+  {
+   "w": "and",
+   "s": 13.84,
+   "e": 13.92
+  },
+  {
+   "w": "both",
+   "s": 14.08,
+   "e": 14.24
+  },
+  {
+   "w": "fell",
+   "s": 14.32,
+   "e": 14.56
+  },
+  {
+   "w": "onto",
+   "s": 14.64,
+   "e": 14.8
+  },
+  {
+   "w": "the",
+   "s": 14.88,
+   "e": 14.96
+  },
+  {
+   "w": "crowded",
+   "s": 15.04,
+   "e": 15.44
+  },
+  {
+   "w": "lobby",
+   "s": 15.52,
+   "e": 15.76
+  },
+  {
+   "w": "below.",
+   "s": 15.84,
+   "e": 16.96
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "title": [
+  "IT WASN'T",
+  "OVERLOADED."
+ ],
+ "voice": {
+  "name": "George",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_v4",
+  "settings": {
+   "stability": 0.45,
+   "similarity_boost": 0.8,
+   "style": 0.2,
+   "use_speaker_boost": true,
+   "speed": 1.0
+  }
+ },
+ "scenes": [
+  {
+   "id": "B1",
+   "visual": "capacity_drop",
+   "focus": [
+    960,
+    560,
+    1500
+   ],
+   "vo": "This collapse wasn't caused by too much weight."
+  },
+  {
+   "id": "B2",
+   "visual": "atrium_crowd",
+   "focus": [
+    960,
+    520,
+    1450
+   ],
+   "vo": "In 1981, two walkways fell inside Kansas City's Hyatt Regency, while a crowd watched a dance."
+  },
+  {
+   "id": "B3",
+   "visual": "investigation",
+   "focus": [
+    960,
+    540,
+    1760
+   ],
+   "vo": "Federal investigators tested the connections. The load that night was only about thirty-one percent of what a code-compliant connection should have held."
+  },
+  {
+   "id": "B4",
+   "visual": "capacity_drop",
+   "focus": [
+    960,
+    560,
+    1500
+   ],
+   "vo": "The crowd didn't break the rating. The rating had already been cut."
+  },
+  {
+   "id": "B5",
+   "visual": "load_flow",
+   "focus": [
+    960,
+    480,
+    1300
+   ],
+   "vo": "First by a weak design. Then by a change that doubled the load on a single nut."
+  },
+  {
+   "id": "B6",
+   "visual": "cta",
+   "focus": [
+    960,
+    540,
+    1300
+   ],
+   "vo": "The full investigation is on our channel."
+  }
+ ]
+}

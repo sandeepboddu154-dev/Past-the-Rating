@@ -1,0 +1,80 @@
+{
+ "title": [
+  "IF YOUR STAMP",
+  "IS ON IT."
+ ],
+ "voice": {
+  "name": "George",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_v4",
+  "settings": {
+   "stability": 0.45,
+   "similarity_boost": 0.8,
+   "style": 0.2,
+   "use_speaker_boost": true,
+   "speed": 1.0
+  }
+ },
+ "scenes": [
+  {
+   "id": "C1",
+   "visual": "split_compare",
+   "focus": [
+    960,
+    560,
+    1500
+   ],
+   "vo": "Who's responsible when a drawing gets changed?"
+  },
+  {
+   "id": "C2",
+   "visual": "paper_trail",
+   "focus": [
+    930,
+    560,
+    1600
+   ],
+   "vo": "In 1981, a steel fabricator proposed splitting one rod into two on the Hyatt Regency's walkways. The shop drawings went to the engineers, and came back stamped."
+  },
+  {
+   "id": "C3",
+   "visual": "load_flow",
+   "focus": [
+    960,
+    480,
+    1300
+   ],
+   "vo": "But the connection was never checked against the doubled load."
+  },
+  {
+   "id": "C4",
+   "visual": "ledger",
+   "focus": [
+    960,
+    560,
+    1600
+   ],
+   "vo": "After the collapse, Missouri found the engineer of record and the project engineer grossly negligent. Both lost their licences."
+  },
+  {
+   "id": "C5",
+   "visual": "stamp",
+   "focus": [
+    960,
+    560,
+    1450
+   ],
+   "vo": "The profession's lesson was blunt. If your stamp is on it, it's yours."
+  },
+  {
+   "id": "C6",
+   "visual": "cta",
+   "focus": [
+    960,
+    540,
+    1300
+   ],
+   "vo": "The full case is on our channel."
+  }
+ ]
+}

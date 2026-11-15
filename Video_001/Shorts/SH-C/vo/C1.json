@@ -1,0 +1,43 @@
+{
+ "hash": "c930c7fb0e89",
+ "id": "C1",
+ "text": "Who's responsible when a drawing gets changed?",
+ "duration": 3.004082,
+ "words": [
+  {
+   "w": "Who's",
+   "s": 0.0,
+   "e": 0.32
+  },
+  {
+   "w": "responsible",
+   "s": 0.44,
+   "e": 1.12
+  },
+  {
+   "w": "when",
+   "s": 1.2,
+   "e": 1.28
+  },
+  {
+   "w": "a",
+   "s": 1.32,
+   "e": 1.36
+  },
+  {
+   "w": "drawing",
+   "s": 1.44,
+   "e": 1.84
+  },
+  {
+   "w": "gets",
+   "s": 1.92,
+   "e": 2.16
+  },
+  {
+   "w": "changed?",
+   "s": 2.24,
+   "e": 2.96
+  }
+ ]
+}

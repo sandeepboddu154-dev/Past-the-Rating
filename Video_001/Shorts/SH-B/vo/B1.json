@@ -1,0 +1,48 @@
+{
+ "hash": "19861baa39af",
+ "id": "B1",
+ "text": "This collapse wasn't caused by too much weight.",
+ "duration": 2.847347,
+ "words": [
+  {
+   "w": "This",
+   "s": 0.0,
+   "e": 0.24
+  },
+  {
+   "w": "collapse",
+   "s": 0.32,
+   "e": 0.72
+  },
+  {
+   "w": "wasn't",
+   "s": 0.8,
+   "e": 1.12
+  },
+  {
+   "w": "caused",
+   "s": 1.2,
+   "e": 1.52
+  },
+  {
+   "w": "by",
+   "s": 1.64,
+   "e": 1.76
+  },
+  {
+   "w": "too",
+   "s": 1.84,
+   "e": 1.92
+  },
+  {
+   "w": "much",
+   "s": 2.0,
+   "e": 2.16
+  },
+  {
+   "w": "weight.",
+   "s": 2.24,
+   "e": 2.8
+  }
+ ]
+}

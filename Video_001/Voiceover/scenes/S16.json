@@ -1,0 +1,368 @@
+{
+ "hash": "bb0e70c7cf73",
+ "id": "S16",
+ "text": "So how did a change like that get through? The steel fabricator proposed the two-rod detail and prepared the shop drawings. Those drawings went back to the structural engineers, and returned with their review stamp. What was said along the way, including a disputed phone call, became one of the most argued-over questions in engineering ethics. What the investigations made clear is that the connection was never checked against the doubled load.",
+ "duration": 28.447347,
+ "words": [
+  {
+   "w": "So",
+   "s": 0.0,
+   "e": 0.16
+  },
+  {
+   "w": "how",
+   "s": 0.32,
+   "e": 0.48
+  },
+  {
+   "w": "did",
+   "s": 0.56,
+   "e": 0.64
+  },
+  {
+   "w": "a",
+   "s": 0.72,
+   "e": 0.8
+  },
+  {
+   "w": "change",
+   "s": 0.96,
+   "e": 1.12
+  },
+  {
+   "w": "like",
+   "s": 1.2,
+   "e": 1.36
+  },
+  {
+   "w": "that",
+   "s": 1.44,
+   "e": 1.68
+  },
+  {
+   "w": "get",
+   "s": 1.76,
+   "e": 1.92
+  },
+  {
+   "w": "through?",
+   "s": 2.0,
+   "e": 3.28
+  },
+  {
+   "w": "The",
+   "s": 3.36,
+   "e": 3.44
+  },
+  {
+   "w": "steel",
+   "s": 3.52,
+   "e": 3.76
+  },
+  {
+   "w": "fabricator",
+   "s": 3.84,
+   "e": 4.56
+  },
+  {
+   "w": "proposed",
+   "s": 4.64,
+   "e": 5.04
+  },
+  {
+   "w": "the",
+   "s": 5.12,
+   "e": 5.2
+  },
+  {
+   "w": "two-rod",
+   "s": 5.28,
+   "e": 5.76
+  },
+  {
+   "w": "detail",
+   "s": 6.12,
+   "e": 6.48
+  },
+  {
+   "w": "and",
+   "s": 6.56,
+   "e": 6.64
+  },
+  {
+   "w": "prepared",
+   "s": 6.88,
+   "e": 7.12
+  },
+  {
+   "w": "the",
+   "s": 7.2,
+   "e": 7.28
+  },
+  {
+   "w": "shop",
+   "s": 7.4,
+   "e": 7.52
+  },
+  {
+   "w": "drawings.",
+   "s": 7.64,
+   "e": 8.72
+  },
+  {
+   "w": "Those",
+   "s": 8.8,
+   "e": 9.04
+  },
+  {
+   "w": "drawings",
+   "s": 9.12,
+   "e": 9.52
+  },
+  {
+   "w": "went",
+   "s": 9.64,
+   "e": 9.76
+  },
+  {
+   "w": "back",
+   "s": 9.84,
+   "e": 10.0
+  },
+  {
+   "w": "to",
+   "s": 10.08,
+   "e": 10.16
+  },
+  {
+   "w": "the",
+   "s": 10.2,
+   "e": 10.24
+  },
+  {
+   "w": "structural",
+   "s": 10.32,
+   "e": 10.72
+  },
+  {
+   "w": "engineers,",
+   "s": 10.8,
+   "e": 11.64
+  },
+  {
+   "w": "and",
+   "s": 11.68,
+   "e": 11.76
+  },
+  {
+   "w": "returned",
+   "s": 12.04,
+   "e": 12.32
+  },
+  {
+   "w": "with",
+   "s": 12.4,
+   "e": 12.48
+  },
+  {
+   "w": "their",
+   "s": 12.56,
+   "e": 12.64
+  },
+  {
+   "w": "review",
+   "s": 12.84,
+   "e": 13.04
+  },
+  {
+   "w": "stamp.",
+   "s": 13.56,
+   "e": 14.12
+  },
+  {
+   "w": "What",
+   "s": 14.16,
+   "e": 14.24
+  },
+  {
+   "w": "was",
+   "s": 14.32,
+   "e": 14.48
+  },
+  {
+   "w": "said",
+   "s": 14.56,
+   "e": 14.64
+  },
+  {
+   "w": "along",
+   "s": 14.72,
+   "e": 14.96
+  },
+  {
+   "w": "the",
+   "s": 15.04,
+   "e": 15.12
+  },
+  {
+   "w": "way,",
+   "s": 15.4,
+   "e": 15.72
+  },
+  {
+   "w": "including",
+   "s": 15.76,
+   "e": 16.24
+  },
+  {
+   "w": "a",
+   "s": 16.28,
+   "e": 16.32
+  },
+  {
+   "w": "disputed",
+   "s": 16.44,
+   "e": 16.88
+  },
+  {
+   "w": "phone",
+   "s": 16.96,
+   "e": 17.2
+  },
+  {
+   "w": "call,",
+   "s": 17.28,
+   "e": 17.88
+  },
+  {
+   "w": "became",
+   "s": 17.92,
+   "e": 18.24
+  },
+  {
+   "w": "one",
+   "s": 18.32,
+   "e": 18.4
+  },
+  {
+   "w": "of",
+   "s": 18.44,
+   "e": 18.48
+  },
+  {
+   "w": "the",
+   "s": 18.52,
+   "e": 18.56
+  },
+  {
+   "w": "most",
+   "s": 18.64,
+   "e": 18.96
+  },
+  {
+   "w": "argued-over",
+   "s": 19.04,
+   "e": 19.6
+  },
+  {
+   "w": "questions",
+   "s": 19.68,
+   "e": 20.16
+  },
+  {
+   "w": "in",
+   "s": 20.24,
+   "e": 20.4
+  },
+  {
+   "w": "engineering",
+   "s": 20.68,
+   "e": 20.96
+  },
+  {
+   "w": "ethics.",
+   "s": 21.04,
+   "e": 22.32
+  },
+  {
+   "w": "What",
+   "s": 22.4,
+   "e": 22.48
+  },
+  {
+   "w": "the",
+   "s": 22.56,
+   "e": 22.64
+  },
+  {
+   "w": "investigations",
+   "s": 22.84,
+   "e": 23.52
+  },
+  {
+   "w": "made",
+   "s": 23.6,
+   "e": 23.84
+  },
+  {
+   "w": "clear",
+   "s": 23.92,
+   "e": 24.48
+  },
+  {
+   "w": "is",
+   "s": 24.56,
+   "e": 24.64
+  },
+  {
+   "w": "that",
+   "s": 24.72,
+   "e": 24.8
+  },
+  {
+   "w": "the",
+   "s": 24.84,
+   "e": 24.88
+  },
+  {
+   "w": "connection",
+   "s": 24.96,
+   "e": 25.44
+  },
+  {
+   "w": "was",
+   "s": 25.52,
+   "e": 25.76
+  },
+  {
+   "w": "never",
+   "s": 25.92,
+   "e": 26.08
+  },
+  {
+   "w": "checked",
+   "s": 26.24,
+   "e": 26.4
+  },
+  {
+   "w": "against",
+   "s": 26.48,
+   "e": 26.8
+  },
+  {
+   "w": "the",
+   "s": 26.88,
+   "e": 26.96
+  },
+  {
+   "w": "doubled",
+   "s": 27.0,
+   "e": 27.36
+  },
+  {
+   "w": "load.",
+   "s": 27.88,
+   "e": 28.48
+  }
+ ]
+}

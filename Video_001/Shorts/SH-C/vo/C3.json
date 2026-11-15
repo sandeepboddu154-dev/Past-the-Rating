@@ -1,0 +1,58 @@
+{
+ "hash": "30071485b043",
+ "id": "C3",
+ "text": "But the connection was never checked against the doubled load.",
+ "duration": 3.552653,
+ "words": [
+  {
+   "w": "But",
+   "s": 0.0,
+   "e": 0.08
+  },
+  {
+   "w": "the",
+   "s": 0.16,
+   "e": 0.24
+  },
+  {
+   "w": "connection",
+   "s": 0.52,
+   "e": 0.8
+  },
+  {
+   "w": "was",
+   "s": 0.92,
+   "e": 1.04
+  },
+  {
+   "w": "never",
+   "s": 1.2,
+   "e": 1.36
+  },
+  {
+   "w": "checked",
+   "s": 1.44,
+   "e": 1.76
+  },
+  {
+   "w": "against",
+   "s": 1.92,
+   "e": 2.08
+  },
+  {
+   "w": "the",
+   "s": 2.16,
+   "e": 2.24
+  },
+  {
+   "w": "doubled",
+   "s": 2.32,
+   "e": 2.64
+  },
+  {
+   "w": "load.",
+   "s": 2.72,
+   "e": 3.6
+  }
+ ]
+}

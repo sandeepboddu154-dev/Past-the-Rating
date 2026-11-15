@@ -1,0 +1,183 @@
+{
+ "hash": "bb789cd9685d",
+ "id": "S20",
+ "text": "One hundred and fourteen people died. Two hundred and sixteen were injured. Rescuers worked through the night to reach those trapped beneath the wreckage. It was the deadliest structural collapse in American history, until 2001.",
+ "duration": 15.229388,
+ "words": [
+  {
+   "w": "One",
+   "s": 0.0,
+   "e": 0.24
+  },
+  {
+   "w": "hundred",
+   "s": 0.32,
+   "e": 0.56
+  },
+  {
+   "w": "and",
+   "s": 0.64,
+   "e": 0.8
+  },
+  {
+   "w": "fourteen",
+   "s": 0.88,
+   "e": 1.28
+  },
+  {
+   "w": "people",
+   "s": 1.36,
+   "e": 1.68
+  },
+  {
+   "w": "died.",
+   "s": 1.76,
+   "e": 2.72
+  },
+  {
+   "w": "Two",
+   "s": 2.8,
+   "e": 2.88
+  },
+  {
+   "w": "hundred",
+   "s": 2.96,
+   "e": 3.2
+  },
+  {
+   "w": "and",
+   "s": 3.32,
+   "e": 3.44
+  },
+  {
+   "w": "sixteen",
+   "s": 3.6,
+   "e": 4.0
+  },
+  {
+   "w": "were",
+   "s": 4.08,
+   "e": 4.24
+  },
+  {
+   "w": "injured.",
+   "s": 4.32,
+   "e": 5.28
+  },
+  {
+   "w": "Rescuers",
+   "s": 5.36,
+   "e": 5.92
+  },
+  {
+   "w": "worked",
+   "s": 6.0,
+   "e": 6.24
+  },
+  {
+   "w": "through",
+   "s": 6.32,
+   "e": 6.48
+  },
+  {
+   "w": "the",
+   "s": 6.56,
+   "e": 6.64
+  },
+  {
+   "w": "night",
+   "s": 6.84,
+   "e": 7.04
+  },
+  {
+   "w": "to",
+   "s": 7.12,
+   "e": 7.2
+  },
+  {
+   "w": "reach",
+   "s": 7.36,
+   "e": 7.52
+  },
+  {
+   "w": "those",
+   "s": 7.68,
+   "e": 7.84
+  },
+  {
+   "w": "trapped",
+   "s": 7.92,
+   "e": 8.24
+  },
+  {
+   "w": "beneath",
+   "s": 8.28,
+   "e": 8.56
+  },
+  {
+   "w": "the",
+   "s": 8.64,
+   "e": 8.72
+  },
+  {
+   "w": "wreckage.",
+   "s": 8.8,
+   "e": 9.72
+  },
+  {
+   "w": "It",
+   "s": 9.76,
+   "e": 9.84
+  },
+  {
+   "w": "was",
+   "s": 9.92,
+   "e": 10.0
+  },
+  {
+   "w": "the",
+   "s": 10.08,
+   "e": 10.24
+  },
+  {
+   "w": "deadliest",
+   "s": 10.36,
+   "e": 10.72
+  },
+  {
+   "w": "structural",
+   "s": 10.8,
+   "e": 11.28
+  },
+  {
+   "w": "collapse",
+   "s": 11.52,
+   "e": 11.76
+  },
+  {
+   "w": "in",
+   "s": 11.84,
+   "e": 11.92
+  },
+  {
+   "w": "American",
+   "s": 12.16,
+   "e": 12.4
+  },
+  {
+   "w": "history,",
+   "s": 12.48,
+   "e": 13.24
+  },
+  {
+   "w": "until",
+   "s": 13.28,
+   "e": 13.68
+  },
+  {
+   "w": "2001.",
+   "s": 13.76,
+   "e": 15.28
+  }
+ ]
+}

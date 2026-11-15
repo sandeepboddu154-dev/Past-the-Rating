@@ -1,0 +1,328 @@
+{
+ "hash": "d2c276864410",
+ "id": "S21",
+ "text": "The National Bureau of Standards, known today as NIST, led the federal investigation. Its engineers recovered the hanger rods and box beams, and load-tested matching connections in the laboratory. Their conclusion was stark. The load on the connection at the moment of collapse was only about thirty-one percent of what a connection designed to the Kansas City code should have been able to hold.",
+ "duration": 25.077551,
+ "words": [
+  {
+   "w": "The",
+   "s": 0.0,
+   "e": 0.08
+  },
+  {
+   "w": "National",
+   "s": 0.16,
+   "e": 0.56
+  },
+  {
+   "w": "Bureau",
+   "s": 0.72,
+   "e": 1.04
+  },
+  {
+   "w": "of",
+   "s": 1.08,
+   "e": 1.12
+  },
+  {
+   "w": "Standards,",
+   "s": 1.28,
+   "e": 2.08
+  },
+  {
+   "w": "known",
+   "s": 2.16,
+   "e": 2.4
+  },
+  {
+   "w": "today",
+   "s": 2.6,
+   "e": 2.8
+  },
+  {
+   "w": "as",
+   "s": 2.88,
+   "e": 3.04
+  },
+  {
+   "w": "NIST,",
+   "s": 3.12,
+   "e": 3.76
+  },
+  {
+   "w": "led",
+   "s": 3.84,
+   "e": 4.08
+  },
+  {
+   "w": "the",
+   "s": 4.16,
+   "e": 4.24
+  },
+  {
+   "w": "federal",
+   "s": 4.28,
+   "e": 4.56
+  },
+  {
+   "w": "investigation.",
+   "s": 4.64,
+   "e": 6.12
+  },
+  {
+   "w": "Its",
+   "s": 6.16,
+   "e": 6.32
+  },
+  {
+   "w": "engineers",
+   "s": 6.4,
+   "e": 6.96
+  },
+  {
+   "w": "recovered",
+   "s": 7.04,
+   "e": 7.44
+  },
+  {
+   "w": "the",
+   "s": 7.52,
+   "e": 7.6
+  },
+  {
+   "w": "hanger",
+   "s": 7.64,
+   "e": 7.92
+  },
+  {
+   "w": "rods",
+   "s": 7.96,
+   "e": 8.24
+  },
+  {
+   "w": "and",
+   "s": 8.32,
+   "e": 8.4
+  },
+  {
+   "w": "box",
+   "s": 8.48,
+   "e": 8.72
+  },
+  {
+   "w": "beams,",
+   "s": 8.8,
+   "e": 9.493
+  },
+  {
+   "w": "and",
+   "s": 9.547,
+   "e": 9.6
+  },
+  {
+   "w": "load-tested",
+   "s": 9.68,
+   "e": 10.4
+  },
+  {
+   "w": "matching",
+   "s": 10.6,
+   "e": 10.8
+  },
+  {
+   "w": "connections",
+   "s": 11.12,
+   "e": 11.44
+  },
+  {
+   "w": "in",
+   "s": 11.48,
+   "e": 11.52
+  },
+  {
+   "w": "the",
+   "s": 11.6,
+   "e": 11.68
+  },
+  {
+   "w": "laboratory.",
+   "s": 11.787,
+   "e": 13.16
+  },
+  {
+   "w": "Their",
+   "s": 13.2,
+   "e": 13.36
+  },
+  {
+   "w": "conclusion",
+   "s": 13.44,
+   "e": 14.0
+  },
+  {
+   "w": "was",
+   "s": 14.08,
+   "e": 14.16
+  },
+  {
+   "w": "stark.",
+   "s": 14.24,
+   "e": 15.24
+  },
+  {
+   "w": "The",
+   "s": 15.28,
+   "e": 15.36
+  },
+  {
+   "w": "load",
+   "s": 15.48,
+   "e": 15.6
+  },
+  {
+   "w": "on",
+   "s": 15.68,
+   "e": 15.76
+  },
+  {
+   "w": "the",
+   "s": 15.8,
+   "e": 15.84
+  },
+  {
+   "w": "connection",
+   "s": 15.92,
+   "e": 16.4
+  },
+  {
+   "w": "at",
+   "s": 16.48,
+   "e": 16.56
+  },
+  {
+   "w": "the",
+   "s": 16.6,
+   "e": 16.64
+  },
+  {
+   "w": "moment",
+   "s": 16.72,
+   "e": 17.04
+  },
+  {
+   "w": "of",
+   "s": 17.08,
+   "e": 17.12
+  },
+  {
+   "w": "collapse",
+   "s": 17.2,
+   "e": 17.92
+  },
+  {
+   "w": "was",
+   "s": 18.0,
+   "e": 18.08
+  },
+  {
+   "w": "only",
+   "s": 18.16,
+   "e": 18.4
+  },
+  {
+   "w": "about",
+   "s": 18.48,
+   "e": 18.8
+  },
+  {
+   "w": "thirty-one",
+   "s": 18.84,
+   "e": 19.44
+  },
+  {
+   "w": "percent",
+   "s": 19.72,
+   "e": 20.0
+  },
+  {
+   "w": "of",
+   "s": 20.08,
+   "e": 20.16
+  },
+  {
+   "w": "what",
+   "s": 20.24,
+   "e": 20.32
+  },
+  {
+   "w": "a",
+   "s": 20.36,
+   "e": 20.4
+  },
+  {
+   "w": "connection",
+   "s": 20.68,
+   "e": 20.96
+  },
+  {
+   "w": "designed",
+   "s": 21.08,
+   "e": 21.44
+  },
+  {
+   "w": "to",
+   "s": 21.48,
+   "e": 21.52
+  },
+  {
+   "w": "the",
+   "s": 21.6,
+   "e": 21.68
+  },
+  {
+   "w": "Kansas",
+   "s": 21.76,
+   "e": 22.08
+  },
+  {
+   "w": "City",
+   "s": 22.16,
+   "e": 22.48
+  },
+  {
+   "w": "code",
+   "s": 22.8,
+   "e": 23.12
+  },
+  {
+   "w": "should",
+   "s": 23.2,
+   "e": 23.28
+  },
+  {
+   "w": "have",
+   "s": 23.32,
+   "e": 23.36
+  },
+  {
+   "w": "been",
+   "s": 23.44,
+   "e": 23.6
+  },
+  {
+   "w": "able",
+   "s": 23.68,
+   "e": 23.84
+  },
+  {
+   "w": "to",
+   "s": 23.92,
+   "e": 24.0
+  },
+  {
+   "w": "hold.",
+   "s": 24.52,
+   "e": 25.12
+  }
+ ]
+}
