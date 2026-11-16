@@ -20,13 +20,13 @@ On July 17, 1981, two suspended walkways inside the Hyatt Regency hotel in Kansa
 It wasn't an earthquake, a storm, or an overloaded crowd. It was one connection, already below code, whose load was doubled by a small change to how a steel rod was detailed. This is the story of the rating, the change, the day, the investigation, and who paid.
 
 0:00 The number
-0:43 The atrium
-1:39 The rating
-2:51 The change
-5:01 The day
-6:01 The investigation
-6:41 Who paid
-7:26 What changed
+0:42 The atrium
+1:37 The rating
+2:47 The change
+4:53 The day
+5:52 The investigation
+6:32 Who paid
+7:14 What changed
 
 Sources:
 • NBS Building Science Series 143 (1982), Investigation of the Kansas City Hyatt Regency Walkways Collapse (NIST)
@@ -35,7 +35,7 @@ Sources:
 • STRUCTURE magazine, "The Hyatt Regency Disaster Revisited"
 • ASCE Civil Engineering (2011), on engineer-of-record responsibility
 
-All visuals are original diagrams and motion graphics by Past The Rating. Narration is AI-generated (ElevenLabs) from our own script. Music and sound effects generated with ElevenLabs.
+All visuals are original diagrams and motion graphics by Past The Rating. Narrated in the creator's own voice, using an ElevenLabs AI clone of that voice, from our own script. Music and sound effects generated with ElevenLabs.
 
 Past The Rating: everything is built for a number. We show what happens past it.
 New investigations every week.
@@ -58,9 +58,9 @@ Engineers and students: have you seen a "small" detail change go through review 
 
 ## Upload settings
 - **Category:** Education · **Language:** English · **Captions:** upload `Subtitles/Video_001_en.srt` (English)
-- **Altered or synthetic content:** **No.** No realistic synthetic people or events are depicted; visuals are diagrams. The AI narration is disclosed in the description. (If YouTube's checklist in your Studio version asks specifically about synthetic voice, answer per its wording.)
+- **Altered or synthetic content:** **No.** No realistic synthetic people or events are depicted; visuals are diagrams. The narration (the creator's own cloned voice) is disclosed in the description. (If YouTube's checklist in your Studio version asks specifically about synthetic voice, answer per its wording.)
 - **Made for kids:** No · **Age restriction:** None needed (no graphic imagery)
-- **End screen (from 8:17):** left box = "Best for viewer" video, right circle = Subscribe (the end card leaves room for both)
+- **End screen (from 8:03):** left box = "Best for viewer" video, right circle = Subscribe (the end card leaves room for both)
 - **Monetization note:** tragedy-adjacent topics can get limited ads. This edit avoids graphic imagery and sensational language to give it the best chance of full ads.
 
 ## Publishing schedule (IST)

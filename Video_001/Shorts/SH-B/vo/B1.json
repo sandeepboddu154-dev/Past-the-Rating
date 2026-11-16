@@ -1,5 +1,5 @@
 {
- "hash": "19861baa39af",
+ "hash": "76df2291dbea",
  "id": "B1",
  "text": "This collapse wasn't caused by too much weight.",
  "duration": 2.847347,
@@ -17,11 +17,11 @@
   {
    "w": "wasn't",
    "s": 0.8,
-   "e": 1.12
+   "e": 1.2
   },
   {
    "w": "caused",
-   "s": 1.2,
+   "s": 1.28,
    "e": 1.52
   },
   {
@@ -36,7 +36,7 @@
   },
   {
    "w": "much",
-   "s": 2.0,
+   "s": 2.04,
    "e": 2.16
   },
   {

@@ -1,8 +1,8 @@
 {
- "hash": "cbf474f5fc98",
+ "hash": "39ad69eafc54",
  "id": "S03",
  "text": "At about five past seven, it reached its limit.",
- "duration": 3.317551,
+ "duration": 3.474286,
  "words": [
   {
    "w": "At",
@@ -27,27 +27,27 @@
   {
    "w": "seven,",
    "s": 1.2,
-   "e": 1.8
+   "e": 1.88
   },
   {
    "w": "it",
-   "s": 1.84,
-   "e": 1.92
+   "s": 1.92,
+   "e": 2.08
   },
   {
    "w": "reached",
-   "s": 2.0,
-   "e": 2.24
-  },
-  {
-   "w": "its",
-   "s": 2.32,
+   "s": 2.16,
    "e": 2.48
   },
   {
+   "w": "its",
+   "s": 2.6,
+   "e": 2.72
+  },
+  {
    "w": "limit.",
-   "s": 2.56,
-   "e": 3.36
+   "s": 2.8,
+   "e": 3.52
   }
  ]
 }

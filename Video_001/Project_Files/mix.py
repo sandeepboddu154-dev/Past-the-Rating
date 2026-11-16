@@ -19,13 +19,14 @@ def cue(sid, word, k=1, offset=0.0):
     raise KeyError(f"cue {word} not in {sid}")
 
 # ── Music placements: (file, start, gain_dB, fade_in, fade_out_at(abs), fade_out_len, filters)
-MUSIC = [
-    ("M1_coldopen", 0.0, -3, 1.5, 38.6, 0.4, "atempo=0.70"),        # 26.5s of energy stretched to land on "limit" (37.87s)
-    ("M2_atrium", seg["CH01"]["start"] - 2.6, -2, 1.2, 170.0, 3.0, None),
-    ("M3_change", seg["CH03"]["start"], -3, 1.5, 302.0, 3.5, None),
-    ("M4_day", seg["CH04"]["start"] - 1.6, -2, 1.5, 334.6, 0.25, None),   # cuts to silence on "dropped"
-    ("M5_memorial", seg["S20"]["start"] + 0.8, -4, 2.5, 361.0, 1.5, None),
-    ("M6_aftermath", seg["CH05"]["start"] - 0.6, -3, 2.5, 479.0, 3.0, None),
+LIMIT = cue("S03", "limit")
+MUSIC = [   # every point is derived from the timeline, so re-voicing or re-timing never desyncs the score
+    ("M1_coldopen", 0.0, -3, 1.5, LIMIT + 0.7, 0.4, f"atempo={26.5 / LIMIT:.4f}"),   # 26.5 s of energy stretched to land on "limit"
+    ("M2_atrium", seg["CH01"]["start"] - 2.6, -2, 1.2, seg["CH03"]["start"] - 1.2, 3.0, None),
+    ("M3_change", seg["CH03"]["start"], -3, 1.5, seg["CH04"]["start"] + 1.0, 3.5, None),
+    ("M4_day", seg["CH04"]["start"] - 1.6, -2, 1.5, cue("S19", "dropped") - 0.1, 0.25, None),   # cuts to silence on "dropped"
+    ("M5_memorial", seg["S20"]["start"] + 0.8, -4, 2.5, seg["CH05"]["start"] - 0.5, 1.5, None),
+    ("M6_aftermath", seg["CH05"]["start"] - 0.6, -3, 2.5, seg["S26"]["start"] + 0.2, 3.0, None),
     ("M7_closing", seg["S26"]["start"] + 2.6, -2, 2.0, DUR - 0.1, 3.0, None),
 ]
 # ── SFX: (file, abs_time, gain_dB)

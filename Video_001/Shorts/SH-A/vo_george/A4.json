@@ -1,0 +1,53 @@
+{
+ "hash": "f5f3d85bee0c",
+ "id": "A4",
+ "text": "The change: two shorter rods. On paper, almost identical.",
+ "duration": 5.32898,
+ "words": [
+  {
+   "w": "The",
+   "s": 0.0,
+   "e": 0.08
+  },
+  {
+   "w": "change:",
+   "s": 0.24,
+   "e": 1.28
+  },
+  {
+   "w": "two",
+   "s": 1.4,
+   "e": 1.52
+  },
+  {
+   "w": "shorter",
+   "s": 1.68,
+   "e": 2.0
+  },
+  {
+   "w": "rods.",
+   "s": 2.08,
+   "e": 2.96
+  },
+  {
+   "w": "On",
+   "s": 3.04,
+   "e": 3.12
+  },
+  {
+   "w": "paper,",
+   "s": 3.2,
+   "e": 3.76
+  },
+  {
+   "w": "almost",
+   "s": 3.96,
+   "e": 4.16
+  },
+  {
+   "w": "identical.",
+   "s": 4.24,
+   "e": 5.28
+  }
+ ]
+}

@@ -1,8 +1,8 @@
 {
- "hash": "ec5d965aef4e",
+ "hash": "94fd5ebba16e",
  "id": "B3",
  "text": "Federal investigators tested the connections. The load that night was only about thirty-one percent of what a code-compliant connection should have held.",
- "duration": 9.560816,
+ "duration": 9.16898,
  "words": [
   {
    "w": "Federal",
@@ -11,47 +11,47 @@
   },
   {
    "w": "investigators",
-   "s": 0.4,
-   "e": 1.2
+   "s": 0.48,
+   "e": 1.36
   },
   {
    "w": "tested",
-   "s": 1.28,
-   "e": 1.68
-  },
-  {
-   "w": "the",
-   "s": 1.72,
+   "s": 1.56,
    "e": 1.76
   },
   {
+   "w": "the",
+   "s": 1.8,
+   "e": 1.84
+  },
+  {
    "w": "connections.",
-   "s": 1.84,
-   "e": 3.04
+   "s": 1.92,
+   "e": 2.96
   },
   {
    "w": "The",
-   "s": 3.12,
-   "e": 3.2
+   "s": 3.04,
+   "e": 3.12
   },
   {
    "w": "load",
-   "s": 3.36,
-   "e": 3.52
+   "s": 3.28,
+   "e": 3.44
   },
   {
    "w": "that",
-   "s": 3.6,
+   "s": 3.56,
    "e": 3.68
   },
   {
    "w": "night",
    "s": 3.76,
-   "e": 4.08
+   "e": 4.0
   },
   {
    "w": "was",
-   "s": 4.16,
+   "s": 4.12,
    "e": 4.24
   },
   {
@@ -66,13 +66,13 @@
   },
   {
    "w": "thirty-one",
-   "s": 5.0,
-   "e": 5.52
+   "s": 5.04,
+   "e": 5.6
   },
   {
    "w": "percent",
-   "s": 5.68,
-   "e": 6.16
+   "s": 5.76,
+   "e": 6.24
   },
   {
    "w": "of",
@@ -91,28 +91,28 @@
   },
   {
    "w": "code-compliant",
-   "s": 6.84,
-   "e": 7.6
+   "s": 6.8,
+   "e": 7.52
   },
   {
    "w": "connection",
-   "s": 7.68,
-   "e": 8.16
+   "s": 7.6,
+   "e": 8.08
   },
   {
    "w": "should",
-   "s": 8.24,
-   "e": 8.4
+   "s": 8.16,
+   "e": 8.24
   },
   {
    "w": "have",
-   "s": 8.48,
-   "e": 8.56
+   "s": 8.32,
+   "e": 8.4
   },
   {
    "w": "held.",
-   "s": 8.76,
-   "e": 9.52
+   "s": 8.56,
+   "e": 9.12
   }
  ]
 }

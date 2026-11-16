@@ -4,12 +4,12 @@
   "OVERLOADED."
  ],
  "voice": {
-  "name": "George",
-  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "name": "Sandy Voice (owner's clone)",
+  "voice_id": "XnWdK7vg8cLjam1x1zW6",
   "model_id": "eleven_v4",
   "settings": {
    "stability": 0.45,
-   "similarity_boost": 0.8,
+   "similarity_boost": 0.85,
    "style": 0.2,
    "use_speaker_boost": true,
    "speed": 1.0

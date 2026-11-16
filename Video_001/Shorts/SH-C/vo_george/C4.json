@@ -1,0 +1,103 @@
+{
+ "hash": "1db070700120",
+ "id": "C4",
+ "text": "After the collapse, Missouri found the engineer of record and the project engineer grossly negligent. Both lost their licences.",
+ "duration": 8.829388,
+ "words": [
+  {
+   "w": "After",
+   "s": 0.0,
+   "e": 0.32
+  },
+  {
+   "w": "the",
+   "s": 0.4,
+   "e": 0.48
+  },
+  {
+   "w": "collapse,",
+   "s": 0.76,
+   "e": 1.2
+  },
+  {
+   "w": "Missouri",
+   "s": 1.28,
+   "e": 1.76
+  },
+  {
+   "w": "found",
+   "s": 1.88,
+   "e": 2.0
+  },
+  {
+   "w": "the",
+   "s": 2.08,
+   "e": 2.16
+  },
+  {
+   "w": "engineer",
+   "s": 2.24,
+   "e": 2.64
+  },
+  {
+   "w": "of",
+   "s": 2.72,
+   "e": 2.8
+  },
+  {
+   "w": "record",
+   "s": 2.88,
+   "e": 3.36
+  },
+  {
+   "w": "and",
+   "s": 3.52,
+   "e": 3.68
+  },
+  {
+   "w": "the",
+   "s": 3.76,
+   "e": 3.84
+  },
+  {
+   "w": "project",
+   "s": 3.92,
+   "e": 4.24
+  },
+  {
+   "w": "engineer",
+   "s": 4.32,
+   "e": 4.96
+  },
+  {
+   "w": "grossly",
+   "s": 5.04,
+   "e": 5.52
+  },
+  {
+   "w": "negligent.",
+   "s": 5.64,
+   "e": 6.72
+  },
+  {
+   "w": "Both",
+   "s": 6.8,
+   "e": 7.12
+  },
+  {
+   "w": "lost",
+   "s": 7.24,
+   "e": 7.36
+  },
+  {
+   "w": "their",
+   "s": 7.44,
+   "e": 7.52
+  },
+  {
+   "w": "licences.",
+   "s": 7.6,
+   "e": 8.88
+  }
+ ]
+}

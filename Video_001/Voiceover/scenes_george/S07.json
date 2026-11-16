@@ -1,0 +1,68 @@
+{
+ "hash": "8e1f5ea639aa",
+ "id": "S07",
+ "text": "To understand what happened next, you only need to understand one joint.",
+ "duration": 5.067755,
+ "words": [
+  {
+   "w": "To",
+   "s": 0.0,
+   "e": 0.16
+  },
+  {
+   "w": "understand",
+   "s": 0.24,
+   "e": 0.8
+  },
+  {
+   "w": "what",
+   "s": 0.88,
+   "e": 0.96
+  },
+  {
+   "w": "happened",
+   "s": 1.04,
+   "e": 1.36
+  },
+  {
+   "w": "next,",
+   "s": 1.44,
+   "e": 2.12
+  },
+  {
+   "w": "you",
+   "s": 2.16,
+   "e": 2.32
+  },
+  {
+   "w": "only",
+   "s": 2.4,
+   "e": 2.64
+  },
+  {
+   "w": "need",
+   "s": 2.72,
+   "e": 2.8
+  },
+  {
+   "w": "to",
+   "s": 2.88,
+   "e": 2.96
+  },
+  {
+   "w": "understand",
+   "s": 3.12,
+   "e": 3.68
+  },
+  {
+   "w": "one",
+   "s": 3.76,
+   "e": 4.0
+  },
+  {
+   "w": "joint.",
+   "s": 4.08,
+   "e": 5.12
+  }
+ ]
+}
