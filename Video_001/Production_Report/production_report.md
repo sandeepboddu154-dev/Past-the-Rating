@@ -16,7 +16,7 @@
 | 2 | **Short SH-B** "It wasn't overloaded." | `Video_001/Final_Exports/PTR_Short_SH-B.mp4` |
 | 2 | **Short SH-C** "If your stamp is on it." | `Video_001/Final_Exports/PTR_Short_SH-C.mp4` |
 | 3 | **Thumbnail** (upload) / 4K master | `Video_001/Final_Exports/thumbnail_1280x720.jpg` · `Video_001/Thumbnails/thumbnail_master_3840x2160.png` |
-| 4 | **Final narration audio** | `Video_001/Voiceover/Video_001_narration_full.mp3` (WAV master alongside; per-scene files in `Voiceover/scenes/`) |
+| 4 | **Final narration audio (your voice)** | `Video_001/Voiceover/Video_001_narration_SANDY.mp3` (per-scene files in `Voiceover/scenes/`; earlier George takes in `Voiceover/scenes_george/`) |
 | 5 | **Complete script** | `Video_001/Script/Video_001_script.md` (timecoded) · `Script/script.json` · Shorts: `Script/script_short_SH-*.json` |
 | 6 | **Subtitles (SRT)** | `Video_001/Final_Exports/Video_001_en.srt` (also embedded in the MP4) · Shorts: `Shorts/SH-*/SH-*.srt` |
 | 7–8 | **Title, description, 3 alternative titles, tags, hashtags, pinned comment, schedule** | `Video_001/Final_Exports/youtube_package.md` |
@@ -28,14 +28,14 @@
 
 | | Long-form | SH-A | SH-B | SH-C |
 |---|---|---|---|---|
-| Duration | **8:37.25** (517.25 s) | **38.83 s** | **34.25 s** | **36.29 s** |
+| Duration | **8:23.63** (503.63 s) | **38.33 s** | **34.04 s** | **35.33 s** |
 | Resolution | **3840×2160** (native 4K vector render) | 1080×1920 | 1080×1920 | 1080×1920 |
-| Frame rate | 24 fps constant (12,414 frames) | 24 fps | 24 fps | 24 fps |
+| Frame rate | 24 fps constant (12,087 frames) | 24 fps | 24 fps | 24 fps |
 | Video | H.264 High, yuv420p, ~8.8 Mb/s | H.264, ~2.4 Mb/s | ~2.5 Mb/s | ~2.1 Mb/s |
 | Audio | AAC-LC 48 kHz stereo ~282 kb/s | AAC 48 kHz stereo | same | same |
-| Loudness | **−14.0 LUFS**, peak −0.8 dBFS | −14.0 LUFS | −14.0 LUFS | −14.0 LUFS |
+| Loudness | **−14.2 LUFS**, peak −0.8 dBFS | −14.1 LUFS | −14.2 LUFS | −14.1 LUFS |
 | Subtitles | Embedded English track + SRT | Burned-in karaoke captions + SRT | same | same |
-| File size | **588 MB** | 12.8 MB | 11.8 MB | 10.0 MB |
+| File size | **573 MB** | 12.7 MB | 11.8 MB | 9.9 MB |
 
 ## 4. Quality control performed
 - **Automated (every export):** full decode with zero errors; **no black frames, no frozen frames**; resolution and frame-rate check; loudness and peak; silence map.
@@ -50,7 +50,7 @@
 ## 5. Tools actually used
 | Tool | Role |
 |---|---|
-| **ElevenLabs** (your Creator plan, key supplied via the secure form) | Narration: voice "George" (premade, British narrative), model **Eleven v4**, speed 0.93 long-form / 1.0 Shorts, with request stitching for continuous prosody. **Music API** (7 score cues). **Sound Effects API** (11 SFX). **Speech-to-Text** (QC). |
+| **ElevenLabs** (your Creator plan, key supplied via the secure form) | Narration: **your own cloned voice "Sandy Voice"**, model **Eleven v4** (chosen over Multilingual v2 and v3 for the widest natural pitch range), speed 0.86 long-form / 1.0 Shorts, with request stitching. (First cut used the stock voice "George"; kept as backup.) **Music API** (7 score cues). **Sound Effects API** (11 SFX). **Speech-to-Text** (QC). |
 | **Chromium + Playwright** (local) | Custom SVG motion-graphics engine, rendered frame-by-frame at native 3840×2160 (16:9) and 1080×1920 (9:16) |
 | **FFmpeg** (local) | H.264 encoding, lossless segment concat, sidechain ducking, two-pass EBU R128 loudness, QC (blackdetect, freezedetect, silencedetect, ebur128) |
 | **Python / numpy / ImageMagick** (local) | Timelines, word-timed subtitles, film grain, voice analysis, contact sheets |
@@ -68,7 +68,7 @@
 ## 7. Limitations and honest notes
 - **ElevenLabs was not actually connected** when production started (no connector, no key). You supplied the key through the secure form. It's now saved on a personal cloud environment called **"past-the-rating"** created for this repository.
 - **No AI cinematic footage.** This is motion graphics, not photoreal video, and that's deliberate for this subject. Future topics without a tragedy angle (e.g. the 777 wing test) could use generated cinematic B-roll *if* you approve Higgsfield credits.
-- **The narration is AI** (stock ElevenLabs voice). It's disclosed in the description. The channel strategy still recommends moving to **your own voice** (or your own consented clone) for long-term authenticity and YPP review safety. The account contains a cloned voice called "Sandy Voice" that I deliberately did not use without your confirmation.
+- **The narration is your own ElevenLabs voice clone** (confirmed by you), disclosed in the description. Only you can judge whether it sounds like you. If it doesn't, re-record a longer, clean sample for the clone and re-voice; the pipeline regenerates everything automatically.
 - **I can't listen to audio.** The mix was verified objectively (loudness, ducking, transcription, spectrograms, silence maps). Please give the music and SFX one listen before publishing; that's the one check a human ear does better.
 - **Large files aren't in git** (MP4s, WAV masters, 4K segment cache; GitHub's 100 MB limit). They live in the session's working directory. **Download them before this cloud session expires.** Everything can be regenerated from the committed pipeline (ElevenLabs outputs are committed as MP3s, so re-rendering costs no credits).
 - **Nothing was published or uploaded to YouTube.** Publishing requires your account.

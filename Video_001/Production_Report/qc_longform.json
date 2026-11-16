@@ -1,29 +1,25 @@
 {
  "file": "Final_Exports/PTR_Video001_Hyatt_Regency_4K.mp4",
- "duration_s": 517.25,
- "size_MB": 588.0,
- "video": "h264 3840x2160 24/1 yuv420p ~8806 kb/s",
- "audio": "aac 48000 Hz 2ch ~282 kb/s",
+ "duration_s": 503.625,
+ "size_MB": 573.5,
+ "video": "h264 3840x2160 24/1 yuv420p ~8812 kb/s",
+ "audio": "aac 48000 Hz 2ch ~291 kb/s",
  "subtitle_tracks": 1,
- "frames": 12414,
+ "frames": 12087,
  "resolution_ok": true,
  "decode_errors": [],
  "black_segments": [],
  "freeze_segments": [],
  "silences": [
   [
-   "299.622",
-   "301.189"
+   "330.21",
+   "333.142"
   ],
   [
-   "339.498",
-   "342.516"
-  ],
-  [
-   "477.654",
-   "479.207"
+   "464.721",
+   "466.376"
   ]
  ],
- "loudness_LUFS": -14.0,
+ "loudness_LUFS": -14.2,
  "true_peak_dBFS": -0.8
 }
