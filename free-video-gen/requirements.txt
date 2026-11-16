@@ -1,0 +1,9 @@
+# Install torch with CUDA first if your platform needs it: https://pytorch.org/get-started/locally/
+torch
+diffusers>=0.35
+transformers
+accelerate
+sentencepiece
+ftfy
+imageio
+imageio-ffmpeg
