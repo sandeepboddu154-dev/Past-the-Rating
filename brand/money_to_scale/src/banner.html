@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:'D';src:local('Inter Display Black');font-weight:900}
+@font-face{font-family:'D';src:local('Inter Display ExtraBold');font-weight:800}
+@font-face{font-family:'D';src:local('Inter Display SemiBold');font-weight:600}
+html,body{margin:0;width:2560px;height:1440px;overflow:hidden;background:#0E0F12;font-family:'D',sans-serif;color:#EDE7D6}
+canvas{position:absolute;left:0;top:0}
+.l{position:absolute;white-space:nowrap}
+.tag{font-size:30px;font-weight:800;letter-spacing:3px;color:#CFC8B3;transform:translateX(-50%)}
+</style></head><body>
+<div class="l" style="left:540px;top:560px">
+  <div style="display:flex;align-items:center;gap:22px"><img src="../renders/profile_800.png" style="width:92px;height:92px;border-radius:50%"><div style="font-size:30px;font-weight:800;letter-spacing:8px;color:#CFC8B3">MONEY TO SCALE</div></div>
+  <div style="font-size:86px;font-weight:900;line-height:1;margin-top:26px;letter-spacing:-2px">Money, shown at</div>
+  <div style="font-size:86px;font-weight:900;line-height:1.05;letter-spacing:-2px;color:#FF6A1A">its real size.</div>
+  <div style="font-size:28px;font-weight:600;color:#CFC8B3;margin-top:22px">Salaries · SIPs · EMIs · Budgets · Billionaires — in 3D, to scale.</div>
+</div>
+<div id="labels"></div>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import {THREE,makeRenderer,makeSet,bundleColumn,person,toScreen,NOTE500} from './mts3d.js';
+const W=2560,H=1440; const r=makeRenderer(W,H); document.body.prepend(r.domElement);
+const s=new THREE.Scene(); makeSet(s,{fog:[24,48]});
+const cam=new THREE.PerspectiveCamera(22,W/H,0.05,100);
+// ₹1 lakh = 2 bundles, ₹10 lakh = 20 bundles, ₹1 crore = 200 bundles
+const cols=[[2,'₹1 LAKH'],[20,'₹10 LAKH'],[200,'₹1 CRORE']]; const xs=[0.0,1.15,2.3];
+cols.forEach(([n,l],i)=>s.add(bundleColumn(n,{x:xs[i]})));
+const p=person({x:3.45}); s.add(p);
+// fit: 2 m tower ≈ 370 px tall; place the group's centre at x≈1720, floor at y≈915 (inside the 1546×423 safe area)
+cam.position.set(1.2,1.6,23); cam.lookAt(1.725,0.95,0);
+cam.setViewOffset(W,H,-400,5,W,H);
+r.render(s,cam);
+const lab=document.getElementById('labels'); const add=(x,y,t,c)=>{const d=document.createElement('div');d.className='l tag';d.style.left=x+'px';d.style.top=y+'px';d.textContent=t;if(c)d.style.color=c;lab.appendChild(d);};
+cols.forEach(([n,l],i)=>{const q=toScreen(new THREE.Vector3(xs[i],0,0.12),cam,W,H); add(q.x,q.y+8,l, i==2?'#FF6A1A':null);});
+const qh0=0;const qh=toScreen(new THREE.Vector3(3.45,0,0.12),cam,W,H); add(qh.x,qh.y+8,'1.75 m');
+window.ready=true;
+</script></body></html>

@@ -10,3 +10,4 @@ Video_001/Project_Files/*.log
 Video_001/Project_Files/probe/
 Video_001/Voiceover/*.wav
 Lab_MoneyToScale/node_modules/
+brand/money_to_scale/src/node_modules
