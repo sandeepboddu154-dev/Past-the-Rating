@@ -67,9 +67,9 @@ function shadowBox(s){ const c=objs.key.shadow.camera; c.left=-s;c.right=s;c.top
 function el(id,html,css=''){ let e=dom[id]; if(!e){ e=document.createElement('div'); e.className='a'; OV.appendChild(e); dom[id]=e; } if(html!==undefined && e._h!==html){ e.innerHTML=html; e._h=html; } if(css) e.style.cssText+=';'+css; return e; }
 function show(id,op){ const e=dom[id]; if(e) e.style.opacity=op; }
 function at(id,v3,dx=0,dy=0){ const p=v3.clone().project(cam); const e=dom[id]; if(!e) return; e.style.left=((p.x+1)/2*W+dx)+'px'; e.style.top=((1-p.y)/2*H+dy)+'px'; }
-function camTo(pos,look){ cam.position.copy(pos); cam.lookAt(look); }
+function camTo(pos,look){ cam.position.copy(pos); cam.lookAt(look); cam.updateMatrixWorld(); }
 // frame(h,cx): straight-on camera that fits content of height h (m) centred at cx into the LEFT part of the frame
-function frame(h,cx=0,{sway=0,lift=0,w=0}={}){ h=Math.max(h,0.04); const D=Math.max(0.18+h*1.75, w>0?0.3+w*1.7:0); const lx=cx+(w>0?0.30:0.24)*D; if(h<0.15) lift+=D*0.32; cam.position.set(lx+Math.sin(sway)*D*0.25,0.06+h*0.55+lift+D*0.06,D); cam.lookAt(lx,h*0.5,0); }
+function frame(h,cx=0,{sway=0,lift=0,w=0}={}){ h=Math.max(h,0.04); const D=Math.max(0.18+h*1.75, w>0?0.3+w*1.7:0); const lx=cx+(w>0?0.30:0.24)*D; if(h<0.15) lift+=D*0.32; cam.position.set(lx+Math.sin(sway)*D*0.25,0.06+h*0.55+lift+D*0.06,D); cam.lookAt(lx,h*0.5,0); cam.updateMatrixWorld(); }
 const showPerson=(p,h)=>{ if(p) p.visible=h>0.55; };
 const camLerp=(a,b,x)=>({p:a.p.clone().lerp(b.p,x),l:a.l.clone().lerp(b.l,x)});
 function hud(txt){ el('hud',`<div style="display:flex;align-items:center;gap:14px"><img src="/brand/money_to_scale/renders/profile_800.png" style="width:44px;height:44px;border-radius:50%"><span class="cap st" style="font-size:20px">${txt}</span></div>`,'left:60px;top:48px'); }
@@ -244,6 +244,13 @@ SC.endcard={build(){ world(); camTo(V(0,1.2,5),V(0,.8,0)); },
   el('b1','<div style="width:960px;height:540px;border:3px solid #262a31;display:flex;align-items:center;justify-content:center;color:#5a5f68;font-size:26px;font-weight:800;letter-spacing:6px">NEXT VIDEO</div>','left:160px;top:380px');
   el('b2','<div style="width:300px;height:300px;border-radius:50%;border:3px solid #262a31;display:flex;align-items:center;justify-content:center;color:#5a5f68;font-size:26px;font-weight:800;letter-spacing:6px">SUBSCRIBE</div>','left:1350px;top:500px');
   el('dc','EDUCATION ONLY · NOT FINANCIAL ADVICE','left:160px;top:960px;font-size:20px').className='a cap dim'; for(const k of ['lg','nm','tg','b1','b2','dc']) show(k,o); }};
+SC.thumb={build(){ world(6,20); objs.c=column(500,CR); objs.c.setValue(CR); S.add(objs.c); objs.p=person({x:.55}); S.add(objs.p); objs.r=rule(-.22,2.2); S.add(objs.r); objs.key.intensity=3.0; const fill=new THREE.DirectionalLight(0xffffff,1.4); fill.position.set(2,2,10); S.add(fill); },
+ update(t,d,c){ cam.fov=12; cam.updateProjectionMatrix(); camTo(V(1.62,1.15,13.5),V(1.02,1.13,0));
+  el('big','TALLER<br>THAN YOU.','left:1010px;top:250px;font-size:150px;font-weight:900;line-height:.92;letter-spacing:-4px');
+  el('cr','₹1 CRORE','left:1016px;top:575px;font-size:96px').className='a mono or';
+  el('sm','IN ₹500 NOTES · TO SCALE','left:1020px;top:700px;font-size:34px').className='a cap st';
+  el('h','2.2 m'); dom.h.className='a lbl or'; dom.h.style.fontSize='54px'; at('h',V(-.22,2.27,0),0,-78);
+  el('p','1.75 m'); dom.p.className='a lbl'; dom.p.style.fontSize='40px'; at('p',V(.55,1.8,0),0,-64); }};
 // ───────────── driver ─────────────
 function norm(s){return s.toLowerCase().replace(/[^a-z0-9]/g,'');}
 window.setSegment=(sg)=>{ seg=sg; OV.innerHTML=''; dom={}; objs={}; const W_=sg.words||[];

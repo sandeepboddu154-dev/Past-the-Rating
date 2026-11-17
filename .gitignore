@@ -11,3 +11,6 @@ Video_001/Project_Files/probe/
 Video_001/Voiceover/*.wav
 Lab_MoneyToScale/node_modules/
 brand/money_to_scale/src/node_modules
+MTS_Video_001/Visual_Assets/segments/
+MTS_Video_001/Project_Files/mix/
+MTS_Video_001/Project_Files/*.log

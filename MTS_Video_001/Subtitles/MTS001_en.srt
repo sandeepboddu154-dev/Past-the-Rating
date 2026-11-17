@@ -1,0 +1,748 @@
+1
+00:00:00,350 --> 00:00:01,990
+One crore rupees.
+
+2
+00:00:02,030 --> 00:00:04,230
+It's the number everyone in India talks
+
+3
+00:00:04,270 --> 00:00:04,760
+about.
+
+4
+00:00:04,830 --> 00:00:07,270
+The salary goal, the retirement goal,
+
+5
+00:00:07,310 --> 00:00:09,670
+the number that means you've made it.
+
+6
+00:00:09,710 --> 00:00:12,630
+But almost nobody has actually seen it.
+
+7
+00:00:12,670 --> 00:00:13,800
+So let's build it.
+
+8
+00:00:13,950 --> 00:00:15,880
+Right here, to scale.
+
+9
+00:00:17,225 --> 00:00:18,665
+And once we've built it,
+
+10
+00:00:18,705 --> 00:00:20,665
+we'll ask three questions.
+
+11
+00:00:20,705 --> 00:00:23,105
+How long does it really take to get there?
+
+12
+00:00:23,145 --> 00:00:25,315
+What will it actually be worth when you
+
+13
+00:00:25,385 --> 00:00:25,745
+do?
+
+14
+00:00:25,785 --> 00:00:28,035
+And is it even enough?
+
+15
+00:00:31,433 --> 00:00:33,233
+Start with one note.
+
+16
+00:00:33,273 --> 00:00:35,353
+A five hundred rupee note is a hundred and
+
+17
+00:00:35,393 --> 00:00:37,713
+fifty millimetres long and sixty-six
+
+18
+00:00:37,753 --> 00:00:39,193
+millimetres wide.
+
+19
+00:00:39,233 --> 00:00:41,393
+Reserve Bank specifications put its
+
+20
+00:00:41,433 --> 00:00:43,153
+thickness at around a hundred and ten
+
+21
+00:00:43,193 --> 00:00:44,193
+microns.
+
+22
+00:00:44,233 --> 00:00:46,403
+About a tenth of a millimetre.
+
+23
+00:00:47,183 --> 00:00:48,983
+Put a hundred of them together,
+
+24
+00:00:49,023 --> 00:00:50,543
+and you get a bundle.
+
+25
+00:00:50,583 --> 00:00:53,223
+Fifty thousand rupees, about eleven
+
+26
+00:00:53,263 --> 00:00:54,663
+millimetres tall.
+
+27
+00:00:54,703 --> 00:00:56,873
+A little over a centimetre.
+
+28
+00:00:57,600 --> 00:00:58,920
+Now keep going.
+
+29
+00:00:58,960 --> 00:01:01,000
+One crore rupees in five hundred rupee
+
+30
+00:01:01,040 --> 00:01:03,560
+notes is twenty thousand notes.
+
+31
+00:01:03,600 --> 00:01:05,720
+That's two hundred bundles.
+
+32
+00:01:05,760 --> 00:01:07,160
+Stacked on top of each other,
+
+33
+00:01:07,200 --> 00:01:09,293
+they reach two point two metres.
+
+34
+00:01:09,333 --> 00:01:11,160
+Taller than the average person standing
+
+35
+00:01:11,200 --> 00:01:12,410
+next to it.
+
+36
+00:01:14,683 --> 00:01:17,003
+And that's the compact version.
+
+37
+00:01:17,043 --> 00:01:18,643
+Switch to hundred rupee notes,
+
+38
+00:01:18,683 --> 00:01:21,523
+and one crore becomes one lakh notes.
+
+39
+00:01:21,563 --> 00:01:24,003
+Stacked up, that's eleven metres,
+
+40
+00:01:24,043 --> 00:01:25,733
+about the height of a three storey
+
+41
+00:01:25,963 --> 00:01:26,483
+building.
+
+42
+00:01:26,523 --> 00:01:29,603
+In ten rupee notes, it's ten lakh notes.
+
+43
+00:01:29,643 --> 00:01:31,803
+A hundred and ten metres tall.
+
+44
+00:01:31,843 --> 00:01:33,403
+One and a half times the height of the
+
+45
+00:01:33,443 --> 00:01:34,853
+Qutub Minar.
+
+46
+00:01:37,517 --> 00:01:39,557
+If you counted every note,
+
+47
+00:01:39,597 --> 00:01:42,517
+one per second, without a single break,
+
+48
+00:01:42,557 --> 00:01:44,597
+you'd be counting for five and a half
+
+49
+00:01:44,637 --> 00:01:45,504
+hours.
+
+50
+00:01:45,544 --> 00:01:47,317
+And that's just counting it.
+
+51
+00:01:47,357 --> 00:01:50,167
+Earning it is a very different story.
+
+52
+00:01:54,017 --> 00:01:56,057
+Let's say you can put aside twenty
+
+53
+00:01:56,097 --> 00:01:58,137
+thousand rupees every month.
+
+54
+00:01:58,177 --> 00:02:00,297
+That's a serious amount of discipline for
+
+55
+00:02:00,337 --> 00:02:01,657
+most households.
+
+56
+00:02:01,697 --> 00:02:04,137
+Every month, one more stack of notes goes
+
+57
+00:02:04,177 --> 00:02:05,627
+onto the tower.
+
+58
+00:02:06,308 --> 00:02:08,108
+If that money just sits there,
+
+59
+00:02:08,148 --> 00:02:10,748
+earning nothing, the tower grows in a
+
+60
+00:02:10,788 --> 00:02:12,268
+perfectly straight line.
+
+61
+00:02:12,308 --> 00:02:14,988
+Two lakh forty thousand rupees a year.
+
+62
+00:02:15,028 --> 00:02:17,188
+To reach one crore, you'd need five
+
+63
+00:02:17,228 --> 00:02:18,375
+hundred months.
+
+64
+00:02:18,415 --> 00:02:21,068
+That's forty-one years and eight months.
+
+65
+00:02:21,108 --> 00:02:23,428
+Start at twenty-five, and you finish at
+
+66
+00:02:23,468 --> 00:02:24,958
+sixty-six.
+
+67
+00:02:29,392 --> 00:02:31,512
+Now let's build a second tower.
+
+68
+00:02:31,552 --> 00:02:33,192
+Same twenty thousand rupees,
+
+69
+00:02:33,232 --> 00:02:34,232
+every month.
+
+70
+00:02:34,272 --> 00:02:36,792
+But this time, the money is invested,
+
+71
+00:02:36,832 --> 00:02:37,992
+and it grows.
+
+72
+00:02:38,032 --> 00:02:40,072
+For this example, we'll assume twelve
+
+73
+00:02:40,112 --> 00:02:41,352
+percent a year.
+
+74
+00:02:41,392 --> 00:02:43,592
+That's an assumption, not a promise.
+
+75
+00:02:43,632 --> 00:02:45,859
+Real returns go up and down,
+
+76
+00:02:45,899 --> 00:02:47,482
+and they can be lower.
+
+77
+00:02:48,183 --> 00:02:49,663
+For the first few years,
+
+78
+00:02:49,703 --> 00:02:52,703
+the two towers look almost identical.
+
+79
+00:02:52,743 --> 00:02:55,263
+After one year, the invested tower is
+
+80
+00:02:55,303 --> 00:02:58,063
+ahead by just sixteen thousand rupees.
+
+81
+00:02:58,103 --> 00:02:59,663
+It barely shows.
+
+82
+00:02:59,703 --> 00:03:01,583
+This is the part where most people give
+
+83
+00:03:01,623 --> 00:03:02,513
+up.
+
+84
+00:03:03,225 --> 00:03:05,545
+But growth earns growth.
+
+85
+00:03:05,585 --> 00:03:08,505
+By year ten, the invested tower adds more
+
+86
+00:03:08,545 --> 00:03:11,105
+than five lakh rupees in a single year,
+
+87
+00:03:11,145 --> 00:03:13,025
+just from its own returns.
+
+88
+00:03:13,065 --> 00:03:15,932
+By year fourteen, almost ten lakh.
+
+89
+00:03:15,972 --> 00:03:17,692
+The line stops being straight,
+
+90
+00:03:17,732 --> 00:03:20,035
+and starts to bend upwards.
+
+91
+00:03:20,725 --> 00:03:23,325
+The invested tower reaches one crore in
+
+92
+00:03:23,365 --> 00:03:25,085
+about fifteen years.
+
+93
+00:03:25,125 --> 00:03:27,805
+At that moment, the savings tower is only
+
+94
+00:03:27,845 --> 00:03:29,885
+about a third of the way up.
+
+95
+00:03:29,925 --> 00:03:32,445
+Same money from your pocket every month.
+
+96
+00:03:32,485 --> 00:03:35,135
+Almost twenty-seven years sooner.
+
+97
+00:03:37,600 --> 00:03:40,120
+And here's the part that surprises people.
+
+98
+00:03:40,160 --> 00:03:42,880
+Of that one crore, you only put in about
+
+99
+00:03:42,920 --> 00:03:44,387
+thirty-six lakh.
+
+100
+00:03:44,427 --> 00:03:47,000
+The other sixty-four lakh is growth.
+
+101
+00:03:47,040 --> 00:03:49,560
+Most of the tower isn't your money at all.
+
+102
+00:03:49,600 --> 00:03:51,130
+It's time.
+
+103
+00:03:52,975 --> 00:03:55,335
+Change the assumption, and the finish line
+
+104
+00:03:55,375 --> 00:03:56,375
+moves.
+
+105
+00:03:56,415 --> 00:03:58,615
+At ten percent a year, it takes a little
+
+106
+00:03:58,655 --> 00:04:00,775
+under sixteen and a half years.
+
+107
+00:04:00,815 --> 00:04:03,575
+At eight percent, a little over eighteen.
+
+108
+00:04:03,615 --> 00:04:06,295
+Slower, but every one of them still beats
+
+109
+00:04:06,335 --> 00:04:09,225
+saving alone by more than two decades.
+
+110
+00:04:12,517 --> 00:04:13,917
+But there's a catch.
+
+111
+00:04:13,957 --> 00:04:16,677
+A crore in twenty years won't be the same
+
+112
+00:04:16,717 --> 00:04:18,370
+crore as today.
+
+113
+00:04:18,410 --> 00:04:19,517
+Prices rise.
+
+114
+00:04:19,557 --> 00:04:21,797
+The Reserve Bank's inflation target is
+
+115
+00:04:21,837 --> 00:04:23,197
+four percent a year.
+
+116
+00:04:23,237 --> 00:04:25,677
+At four percent, a crore twenty years from
+
+117
+00:04:25,717 --> 00:04:28,557
+now buys what about forty-six lakh buys
+
+118
+00:04:28,597 --> 00:04:29,357
+today.
+
+119
+00:04:29,397 --> 00:04:31,837
+At six percent, it's closer to thirty-one
+
+120
+00:04:31,877 --> 00:04:32,847
+lakh.
+
+121
+00:04:34,517 --> 00:04:36,637
+The tower stays the same height.
+
+122
+00:04:36,677 --> 00:04:39,117
+The number printed on it stays the same.
+
+123
+00:04:39,157 --> 00:04:41,677
+But what it can actually buy quietly
+
+124
+00:04:41,717 --> 00:04:44,607
+shrinks, every single year.
+
+125
+00:04:48,642 --> 00:04:52,042
+So, is one crore enough to retire on?
+
+126
+00:04:52,082 --> 00:04:54,482
+One common rule of thumb says you can take
+
+127
+00:04:54,522 --> 00:04:56,522
+out about four percent a year.
+
+128
+00:04:56,562 --> 00:04:59,082
+On one crore, that's four lakh rupees a
+
+129
+00:04:59,122 --> 00:05:01,402
+year, or roughly thirty-three thousand a
+
+130
+00:05:01,442 --> 00:05:02,412
+month.
+
+131
+00:05:03,142 --> 00:05:05,662
+That rule comes from American research,
+
+132
+00:05:05,702 --> 00:05:07,902
+and India's higher inflation makes it
+
+133
+00:05:07,942 --> 00:05:09,182
+optimistic here.
+
+134
+00:05:09,222 --> 00:05:11,742
+And if you retire twenty years from now,
+
+135
+00:05:11,782 --> 00:05:13,582
+with six percent inflation,
+
+136
+00:05:13,622 --> 00:05:15,422
+that thirty-three thousand a month would
+
+137
+00:05:15,462 --> 00:05:17,982
+feel like about ten thousand does today.
+
+138
+00:05:18,022 --> 00:05:21,075
+For most families, that isn't retirement.
+
+139
+00:05:21,115 --> 00:05:22,592
+It's a start.
+
+140
+00:05:26,642 --> 00:05:29,162
+So what actually changes the picture?
+
+141
+00:05:29,202 --> 00:05:30,362
+Two levers.
+
+142
+00:05:30,402 --> 00:05:32,842
+The first is raising your investment every
+
+143
+00:05:32,882 --> 00:05:34,682
+year, as your income grows.
+
+144
+00:05:34,722 --> 00:05:36,415
+Start at twenty thousand a month,
+
+145
+00:05:36,455 --> 00:05:39,082
+and increase it by ten percent every year.
+
+146
+00:05:39,122 --> 00:05:41,162
+At the same assumed twelve percent,
+
+147
+00:05:41,202 --> 00:05:43,562
+you reach one crore in about twelve years
+
+148
+00:05:43,602 --> 00:05:44,762
+instead of fifteen.
+
+149
+00:05:44,802 --> 00:05:47,002
+Even a five percent yearly increase gets
+
+150
+00:05:47,042 --> 00:05:49,452
+you there in about thirteen and a half.
+
+151
+00:05:50,142 --> 00:05:52,182
+The second lever is time,
+
+152
+00:05:52,222 --> 00:05:54,662
+and it's the one you can never buy back.
+
+153
+00:05:54,702 --> 00:05:56,502
+Take ten thousand rupees a month,
+
+154
+00:05:56,542 --> 00:05:58,422
+invested until you're sixty,
+
+155
+00:05:58,462 --> 00:06:00,822
+at the same assumed twelve percent.
+
+156
+00:06:00,862 --> 00:06:02,742
+Start at twenty-five, and the tower
+
+157
+00:06:02,782 --> 00:06:05,142
+reaches about six and a half crore.
+
+158
+00:06:05,182 --> 00:06:07,302
+Start at thirty, about three and a half
+
+159
+00:06:07,342 --> 00:06:08,102
+crore.
+
+160
+00:06:08,142 --> 00:06:10,582
+Start at thirty-five, a little under two
+
+161
+00:06:10,622 --> 00:06:11,592
+crore.
+
+162
+00:06:13,517 --> 00:06:16,277
+Every five years you wait roughly halves
+
+163
+00:06:16,317 --> 00:06:18,597
+the final tower, even though you only
+
+164
+00:06:18,637 --> 00:06:21,157
+invest about six lakh rupees less.
+
+165
+00:06:21,197 --> 00:06:22,970
+Or look at it the other way.
+
+166
+00:06:23,010 --> 00:06:25,210
+To reach one crore in twenty years,
+
+167
+00:06:25,250 --> 00:06:27,397
+you'd need about ten thousand a month.
+
+168
+00:06:27,437 --> 00:06:30,037
+In fifteen years, about twenty thousand.
+
+169
+00:06:30,077 --> 00:06:32,624
+In ten years, forty-three thousand.
+
+170
+00:06:32,664 --> 00:06:34,517
+The later you start, the bigger the
+
+171
+00:06:34,557 --> 00:06:35,927
+monthly bill.
+
+172
+00:06:37,392 --> 00:06:40,072
+So here's what one crore really is.
+
+173
+00:06:40,112 --> 00:06:42,472
+A stack of notes, two point two metres
+
+174
+00:06:42,512 --> 00:06:43,272
+tall.
+
+175
+00:06:43,312 --> 00:06:45,912
+Forty-one years if you only save.
+
+176
+00:06:45,952 --> 00:06:48,392
+About fifteen if you invest and stay
+
+177
+00:06:48,432 --> 00:06:49,272
+patient.
+
+178
+00:06:49,312 --> 00:06:51,352
+And, by the time you get there,
+
+179
+00:06:51,392 --> 00:06:53,432
+worth a lot less than it looks.
+
+180
+00:06:53,472 --> 00:06:55,112
+The number stays the same.
+
+181
+00:06:55,152 --> 00:06:57,002
+The size doesn't.
+
+182
+00:06:59,475 --> 00:07:01,435
+This video is education,
+
+183
+00:07:01,475 --> 00:07:03,142
+not financial advice.
+
+184
+00:07:03,182 --> 00:07:05,595
+If you want to see money at its real size,
+
+185
+00:07:05,635 --> 00:07:06,675
+subscribe.
+
+186
+00:07:06,715 --> 00:07:08,795
+Next time, we're stacking up what a home
+
+187
+00:07:08,835 --> 00:07:10,605
+loan really costs you.
+
