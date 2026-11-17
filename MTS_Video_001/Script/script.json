@@ -1,0 +1,181 @@
+{
+  "title": "What ₹1 Crore Actually Looks Like (And How Long It Really Takes)",
+  "voice": {
+    "name": "Sandy Voice (owner's clone)",
+    "voice_id": "XnWdK7vg8cLjam1x1zW6",
+    "model_id": "eleven_v4",
+    "settings": {
+      "stability": 0.5,
+      "similarity_boost": 0.85,
+      "style": 0.15,
+      "use_speaker_boost": true,
+      "speed": 0.9
+    }
+  },
+  "scenes": [
+    {
+      "id": "S01",
+      "chapter": null,
+      "visual": "open_tower",
+      "vo": "One crore rupees. It's the number everyone in India talks about. The salary goal, the retirement goal, the number that means you've made it. But almost nobody has actually seen it. So let's build it. Right here, to scale.",
+      "tail": 1.2
+    },
+    {
+      "id": "S02",
+      "chapter": null,
+      "visual": "open_question",
+      "vo": "And once we've built it, we'll ask three questions. How long does it really take to get there? What will it actually be worth when you do? And is it even enough?"
+    },
+    {
+      "id": "S03",
+      "chapter": "01",
+      "chapter_title": "The Stack",
+      "visual": "one_note",
+      "vo": "Start with one note. A five hundred rupee note is a hundred and fifty millimetres long and sixty-six millimetres wide. Reserve Bank specifications put its thickness at around a hundred and ten microns. About a tenth of a millimetre."
+    },
+    {
+      "id": "S04",
+      "chapter": null,
+      "visual": "one_bundle",
+      "vo": "Put a hundred of them together, and you get a bundle. Fifty thousand rupees, about eleven millimetres tall. A little over a centimetre."
+    },
+    {
+      "id": "S05",
+      "chapter": null,
+      "visual": "build_crore",
+      "vo": "Now keep going. One crore rupees in five hundred rupee notes is twenty thousand notes. That's two hundred bundles. Stacked on top of each other, they reach two point two metres. Taller than the average person standing next to it.",
+      "tail": 2.2
+    },
+    {
+      "id": "S05B",
+      "chapter": null,
+      "visual": "small_notes",
+      "vo": "And that's the compact version. Switch to hundred rupee notes, and one crore becomes one lakh notes. Stacked up, that's eleven metres, about the height of a three storey building. In ten rupee notes, it's ten lakh notes. A hundred and ten metres tall. One and a half times the height of the Qutub Minar.",
+      "tail": 2.6
+    },
+    {
+      "id": "S06",
+      "chapter": null,
+      "visual": "count_clock",
+      "vo": "If you counted every note, one per second, without a single break, you'd be counting for five and a half hours. And that's just counting it. Earning it is a very different story.",
+      "tail": 1.2
+    },
+    {
+      "id": "S07",
+      "chapter": "02",
+      "chapter_title": "Saving It",
+      "visual": "save_tower",
+      "vo": "Let's say you can put aside twenty thousand rupees every month. That's a serious amount of discipline for most households. Every month, one more stack of notes goes onto the tower."
+    },
+    {
+      "id": "S08",
+      "chapter": null,
+      "visual": "save_timeline",
+      "vo": "If that money just sits there, earning nothing, the tower grows in a perfectly straight line. Two lakh forty thousand rupees a year. To reach one crore, you'd need five hundred months. That's forty-one years and eight months. Start at twenty-five, and you finish at sixty-six.",
+      "tail": 1.8
+    },
+    {
+      "id": "S09",
+      "chapter": "03",
+      "chapter_title": "Investing It",
+      "visual": "race_setup",
+      "vo": "Now let's build a second tower. Same twenty thousand rupees, every month. But this time, the money is invested, and it grows. For this example, we'll assume twelve percent a year. That's an assumption, not a promise. Real returns go up and down, and they can be lower."
+    },
+    {
+      "id": "S10",
+      "chapter": null,
+      "visual": "race_early",
+      "vo": "For the first few years, the two towers look almost identical. After one year, the invested tower is ahead by just sixteen thousand rupees. It barely shows. This is the part where most people give up."
+    },
+    {
+      "id": "S11",
+      "chapter": null,
+      "visual": "race_curve",
+      "vo": "But growth earns growth. By year ten, the invested tower adds more than five lakh rupees in a single year, just from its own returns. By year fourteen, almost ten lakh. The line stops being straight, and starts to bend upwards."
+    },
+    {
+      "id": "S12",
+      "chapter": null,
+      "visual": "race_finish",
+      "vo": "The invested tower reaches one crore in about fifteen years. At that moment, the savings tower is only about a third of the way up. Same money from your pocket every month. Almost twenty-seven years sooner.",
+      "tail": 2.4
+    },
+    {
+      "id": "S13",
+      "chapter": null,
+      "visual": "race_split",
+      "vo": "And here's the part that surprises people. Of that one crore, you only put in about thirty-six lakh. The other sixty-four lakh is growth. Most of the tower isn't your money at all. It's time.",
+      "tail": 1.8
+    },
+    {
+      "id": "S14",
+      "chapter": null,
+      "visual": "rates_compare",
+      "vo": "Change the assumption, and the finish line moves. At ten percent a year, it takes a little under sixteen and a half years. At eight percent, a little over eighteen. Slower, but every one of them still beats saving alone by more than two decades."
+    },
+    {
+      "id": "S15",
+      "chapter": "04",
+      "chapter_title": "What It Will Be Worth",
+      "visual": "inflation_shrink",
+      "vo": "But there's a catch. A crore in twenty years won't be the same crore as today. Prices rise. The Reserve Bank's inflation target is four percent a year. At four percent, a crore twenty years from now buys what about forty-six lakh buys today. At six percent, it's closer to thirty-one lakh.",
+      "tail": 1.6
+    },
+    {
+      "id": "S16",
+      "chapter": null,
+      "visual": "inflation_ghost",
+      "vo": "The tower stays the same height. The number printed on it stays the same. But what it can actually buy quietly shrinks, every single year.",
+      "tail": 1.4
+    },
+    {
+      "id": "S17",
+      "chapter": "05",
+      "chapter_title": "Is It Enough?",
+      "visual": "withdraw",
+      "vo": "So, is one crore enough to retire on? One common rule of thumb says you can take out about four percent a year. On one crore, that's four lakh rupees a year, or roughly thirty-three thousand a month."
+    },
+    {
+      "id": "S18",
+      "chapter": null,
+      "visual": "withdraw_future",
+      "vo": "That rule comes from American research, and India's higher inflation makes it optimistic here. And if you retire twenty years from now, with six percent inflation, that thirty-three thousand a month would feel like about ten thousand does today. For most families, that isn't retirement. It's a start.",
+      "tail": 1.4
+    },
+    {
+      "id": "L01",
+      "chapter": "06",
+      "chapter_title": "The Two Levers",
+      "visual": "lever_stepup",
+      "vo": "So what actually changes the picture? Two levers. The first is raising your investment every year, as your income grows. Start at twenty thousand a month, and increase it by ten percent every year. At the same assumed twelve percent, you reach one crore in about twelve years instead of fifteen. Even a five percent yearly increase gets you there in about thirteen and a half."
+    },
+    {
+      "id": "L02",
+      "chapter": null,
+      "visual": "lever_time",
+      "vo": "The second lever is time, and it's the one you can never buy back. Take ten thousand rupees a month, invested until you're sixty, at the same assumed twelve percent. Start at twenty-five, and the tower reaches about six and a half crore. Start at thirty, about three and a half crore. Start at thirty-five, a little under two crore.",
+      "tail": 1.8
+    },
+    {
+      "id": "L03",
+      "chapter": null,
+      "visual": "lever_halves",
+      "vo": "Every five years you wait roughly halves the final tower, even though you only invest about six lakh rupees less. Or look at it the other way. To reach one crore in twenty years, you'd need about ten thousand a month. In fifteen years, about twenty thousand. In ten years, forty-three thousand. The later you start, the bigger the monthly bill.",
+      "tail": 1.4
+    },
+    {
+      "id": "S19",
+      "chapter": null,
+      "visual": "close",
+      "vo": "So here's what one crore really is. A stack of notes, two point two metres tall. Forty-one years if you only save. About fifteen if you invest and stay patient. And, by the time you get there, worth a lot less than it looks. The number stays the same. The size doesn't.",
+      "tail": 2.4
+    },
+    {
+      "id": "S20",
+      "chapter": null,
+      "visual": "endcard",
+      "tail": 14.0,
+      "vo": "This video is education, not financial advice. If you want to see money at its real size, subscribe. Next time, we're stacking up what a home loan really costs you."
+    }
+  ]
+}

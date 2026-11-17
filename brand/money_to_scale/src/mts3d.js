@@ -1,8 +1,8 @@
 // Money To Scale — shared 3D toolkit (Three.js). Real-world units: metres.
 import * as THREE from 'three';
 export const PAL={ink:0x0E0F12,floor:0x15171B,grid1:0x262a31,grid2:0x1b1e23,orange:0xFF6A1A,person:0x3a3f47};
-// ₹500 (Mahatma Gandhi New Series): 150 x 66 mm. Bundle of 100 notes ≈ 10 mm thick (approx. 0.1 mm/note — to be verified per video).
-export const NOTE500={w:0.150,d:0.066,bundleH:0.010,value:500,perBundle:100};
+// ₹500 (Mahatma Gandhi New Series): 150 x 66 mm. Thickness: RBI specification 110 microns per note (verified 17 Nov 2026).
+export const NOTE500={w:0.150,d:0.066,bundleH:0.011,value:500,perBundle:100};   // RBI spec: 110 µm per note → 11 mm per 100-note bundle
 export function makeRenderer(W,H){const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(W,H);r.setPixelRatio(1);
   r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.toneMapping=THREE.ACESFilmicToneMapping;r.outputColorSpace=THREE.SRGBColorSpace;return r;}
 export function makeSet(scene,{fog=[8,26]}={}){scene.background=new THREE.Color(PAL.ink);scene.fog=new THREE.Fog(PAL.ink,fog[0],fog[1]);

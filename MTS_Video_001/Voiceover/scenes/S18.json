@@ -1,0 +1,248 @@
+{
+ "hash": "641329635c15",
+ "id": "S18",
+ "text": "That rule comes from American research, and India's higher inflation makes it optimistic here. And if you retire twenty years from now, with six percent inflation, that thirty-three thousand a month would feel like about ten thousand does today. For most families, that isn't retirement. It's a start.",
+ "duration": 19.147755,
+ "words": [
+  {
+   "w": "That",
+   "s": 0.0,
+   "e": 0.24
+  },
+  {
+   "w": "rule",
+   "s": 0.32,
+   "e": 0.56
+  },
+  {
+   "w": "comes",
+   "s": 0.64,
+   "e": 0.8
+  },
+  {
+   "w": "from",
+   "s": 0.88,
+   "e": 1.12
+  },
+  {
+   "w": "American",
+   "s": 1.4,
+   "e": 1.68
+  },
+  {
+   "w": "research,",
+   "s": 2.08,
+   "e": 2.52
+  },
+  {
+   "w": "and",
+   "s": 2.56,
+   "e": 2.8
+  },
+  {
+   "w": "India's",
+   "s": 2.88,
+   "e": 3.28
+  },
+  {
+   "w": "higher",
+   "s": 3.36,
+   "e": 3.6
+  },
+  {
+   "w": "inflation",
+   "s": 3.68,
+   "e": 4.32
+  },
+  {
+   "w": "makes",
+   "s": 4.4,
+   "e": 4.48
+  },
+  {
+   "w": "it",
+   "s": 4.56,
+   "e": 4.72
+  },
+  {
+   "w": "optimistic",
+   "s": 4.8,
+   "e": 5.36
+  },
+  {
+   "w": "here.",
+   "s": 5.44,
+   "e": 6.04
+  },
+  {
+   "w": "And",
+   "s": 6.08,
+   "e": 6.4
+  },
+  {
+   "w": "if",
+   "s": 6.48,
+   "e": 6.56
+  },
+  {
+   "w": "you",
+   "s": 6.6,
+   "e": 6.64
+  },
+  {
+   "w": "retire",
+   "s": 6.72,
+   "e": 7.12
+  },
+  {
+   "w": "twenty",
+   "s": 7.28,
+   "e": 7.44
+  },
+  {
+   "w": "years",
+   "s": 7.52,
+   "e": 7.76
+  },
+  {
+   "w": "from",
+   "s": 7.84,
+   "e": 7.92
+  },
+  {
+   "w": "now,",
+   "s": 8.0,
+   "e": 8.56
+  },
+  {
+   "w": "with",
+   "s": 8.64,
+   "e": 8.72
+  },
+  {
+   "w": "six",
+   "s": 8.8,
+   "e": 8.96
+  },
+  {
+   "w": "percent",
+   "s": 9.04,
+   "e": 9.36
+  },
+  {
+   "w": "inflation,",
+   "s": 9.44,
+   "e": 10.4
+  },
+  {
+   "w": "that",
+   "s": 10.48,
+   "e": 10.56
+  },
+  {
+   "w": "thirty-three",
+   "s": 10.64,
+   "e": 11.04
+  },
+  {
+   "w": "thousand",
+   "s": 11.2,
+   "e": 11.44
+  },
+  {
+   "w": "a",
+   "s": 11.52,
+   "e": 11.6
+  },
+  {
+   "w": "month",
+   "s": 11.8,
+   "e": 12.0
+  },
+  {
+   "w": "would",
+   "s": 12.12,
+   "e": 12.24
+  },
+  {
+   "w": "feel",
+   "s": 12.32,
+   "e": 12.4
+  },
+  {
+   "w": "like",
+   "s": 12.48,
+   "e": 12.64
+  },
+  {
+   "w": "about",
+   "s": 12.72,
+   "e": 13.12
+  },
+  {
+   "w": "ten",
+   "s": 13.24,
+   "e": 13.36
+  },
+  {
+   "w": "thousand",
+   "s": 13.44,
+   "e": 13.76
+  },
+  {
+   "w": "does",
+   "s": 13.84,
+   "e": 14.08
+  },
+  {
+   "w": "today.",
+   "s": 14.44,
+   "e": 14.84
+  },
+  {
+   "w": "For",
+   "s": 14.88,
+   "e": 15.04
+  },
+  {
+   "w": "most",
+   "s": 15.16,
+   "e": 15.28
+  },
+  {
+   "w": "families,",
+   "s": 15.36,
+   "e": 16.2
+  },
+  {
+   "w": "that",
+   "s": 16.24,
+   "e": 16.56
+  },
+  {
+   "w": "isn't",
+   "s": 16.64,
+   "e": 16.88
+  },
+  {
+   "w": "retirement.",
+   "s": 17.0,
+   "e": 17.947
+  },
+  {
+   "w": "It's",
+   "s": 17.973,
+   "e": 18.08
+  },
+  {
+   "w": "a",
+   "s": 18.16,
+   "e": 18.24
+  },
+  {
+   "w": "start.",
+   "s": 18.32,
+   "e": 19.2
+  }
+ ]
+}
