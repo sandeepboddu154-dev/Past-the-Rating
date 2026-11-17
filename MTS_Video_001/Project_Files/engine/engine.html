@@ -1,0 +1,255 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'D';src:local('Inter Display Black');font-weight:900}
+@font-face{font-family:'D';src:local('Inter Display ExtraBold');font-weight:800}
+@font-face{font-family:'D';src:local('Inter Display SemiBold');font-weight:600}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#0E0F12;font-family:'D',sans-serif;color:#EDE7D6}
+canvas{position:absolute;left:0;top:0}
+#ov{position:absolute;inset:0;pointer-events:none}
+.a{position:absolute;white-space:nowrap}
+.mono{font-family:'DejaVu Sans Mono',monospace;font-weight:700;letter-spacing:-1px}
+.cap{font-weight:800;letter-spacing:4px;text-transform:uppercase}
+.chip{border:3px solid #FF6A1A;color:#FF6A1A;padding:8px 18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:28px}
+.lbl{font-weight:800;letter-spacing:2px;font-size:28px;color:#EDE7D6;transform:translate(-50%,0);text-shadow:0 2px 8px #000}
+.or{color:#FF6A1A}.dim{color:#9E977F}.st{color:#CFC8B3}
+</style></head><body>
+<div id="ov"></div>
+<script type="importmap">{"imports":{"three":"/Lab_MoneyToScale/node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const W=1920,H=1080;
+const R=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); R.setSize(W,H); R.setPixelRatio(window.devicePixelRatio||1);
+R.shadowMap.enabled=true; R.shadowMap.type=THREE.PCFSoftShadowMap; R.toneMapping=THREE.ACESFilmicToneMapping; R.outputColorSpace=THREE.SRGBColorSpace;
+document.body.prepend(R.domElement);
+const OV=document.getElementById('ov');
+// ───────────── helpers ─────────────
+const cl=x=>Math.min(1,Math.max(0,x)), P=(t,a,b)=>cl((t-a)/(b-a)), eo=x=>1-Math.pow(1-cl(x),3), eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const lerp=(a,b,x)=>a+(b-a)*x, V=(x,y,z)=>new THREE.Vector3(x,y,z);
+const inr=n=>{n=Math.round(n);const s=String(n);if(s.length<=3)return s;return s.slice(0,-3).replace(/\B(?=(\d{2})+(?!\d))/g,',')+','+s.slice(-3);};
+const lakhCr=n=>n>=1e7?`₹${(n/1e7).toFixed(n%1e7?2:0)} crore`:`₹${(n/1e5).toFixed(1)} lakh`;
+const BH=0.011; // RBI spec 110 µm/note → 100-note bundle = 11 mm
+const NOTES={500:{w:.150,d:.066,c:['#b7b5a4','#8f8d7e'],side:'#9a9a8c',t:'500'},100:{w:.142,d:.066,c:['#b9a9d1','#8d7cab'],side:'#9c8db8',t:'100'},10:{w:.123,d:.063,c:['#b48a6a','#7d5a42'],side:'#93694d',t:'10'}};
+const matCache={};
+function noteMats(den,accent=null){ const key=den+'_'+(accent||''); if(matCache[key]) return matCache[key]; const N=NOTES[den];
+  const cv=document.createElement('canvas');cv.width=512;cv.height=64;const g=cv.getContext('2d');g.fillStyle=N.side;g.fillRect(0,0,512,64);
+  for(let i=0;i<64;i+=2){g.fillStyle=i%4?'rgba(0,0,0,.08)':'rgba(255,255,255,.08)';g.fillRect(0,i,512,1);} g.fillStyle=accent||'#e8e2d0';g.fillRect(236,0,40,64);
+  const tc=document.createElement('canvas');tc.width=600;tc.height=264;const t=tc.getContext('2d');const gr=t.createLinearGradient(0,0,600,264);gr.addColorStop(0,N.c[0]);gr.addColorStop(1,N.c[1]);
+  t.fillStyle=gr;t.fillRect(0,0,600,264);t.strokeStyle='rgba(0,0,0,.25)';t.lineWidth=6;t.strokeRect(10,10,580,244);t.fillStyle=accent||'#e8e2d0';t.fillRect(270,0,60,264);
+  t.fillStyle='rgba(0,0,0,.55)';t.font='bold 64px DejaVu Sans';t.fillText(N.t,40,90);t.beginPath();t.arc(470,140,70,0,Math.PI*2);t.fillStyle='rgba(255,255,255,.18)';t.fill();
+  const a=new THREE.CanvasTexture(cv),b=new THREE.CanvasTexture(tc);a.colorSpace=b.colorSpace=THREE.SRGBColorSpace;
+  const s=new THREE.MeshStandardMaterial({map:a,roughness:.85}),tp=new THREE.MeshStandardMaterial({map:b,roughness:.8});
+  return matCache[key]=[s,s,tp,tp,s,s]; }
+// Instanced column of bundles; setValue(rupees) shows the right number of bundles (fractional top bundle)
+function column(den,maxRupees,{x=0,z=0,accent=null}={}){ const N=NOTES[den], per=den*100, max=Math.ceil(maxRupees/per)+1;
+  const geo=new THREE.BoxGeometry(N.w,BH,N.d); const m=new THREE.InstancedMesh(geo,noteMats(den,accent),max); m.castShadow=m.receiveShadow=true;
+  const o=new THREE.Object3D(); m.count=0; m.position.set(x,0,z); m.frustumCulled=false;
+  m.setValue=(v)=>{ const b=Math.max(0,v/per); const k=Math.floor(b), f=b-k; const n=Math.min(max,k+(f>0.001?1:0)); m.count=n;
+    for(let i=0;i<n;i++){ const sy=(i===k)?f:1; o.position.set(0,BH*i+BH*sy/2+0.0005,0); o.scale.set(1,sy,1); o.rotation.y=(i%2?0.012:-0.012); o.updateMatrix(); m.setMatrixAt(i,o.matrix);} m.instanceMatrix.needsUpdate=true; m.height=b*BH; };
+  m.setValue(0); return m; }
+function person({x=0,z=0}={}){ const pm=new THREE.MeshStandardMaterial({color:0x3a3f47,roughness:.6}); const g=new THREE.Group();
+  const cap=(r,l,px,py,rz=0)=>{const q=new THREE.Mesh(new THREE.CapsuleGeometry(r,l,8,16),pm);q.position.set(px,py,0);q.rotation.z=rz;q.castShadow=true;g.add(q);};
+  cap(.065,.74,-.09,.43);cap(.065,.74,.09,.43);cap(.17,.42,0,1.13);cap(.05,.56,-.25,1.12,.12);cap(.05,.56,.25,1.12,-.12);cap(.05,.04,0,1.50);
+  const h=new THREE.Mesh(new THREE.SphereGeometry(.11,32,20),pm);h.scale.set(1,1.18,1.05);h.position.y=1.62;h.castShadow=true;g.add(h); g.position.set(x,0,z); return g; }
+function rule(x,h,{z=0}={}){ const g=new THREE.Group(); const m=new THREE.MeshStandardMaterial({color:0xEDE7D6,roughness:.5});
+  const pole=new THREE.Mesh(new THREE.BoxGeometry(.012,h,.012),m); pole.position.y=h/2; g.add(pole);
+  const step=h>20?10:(h>5?1:0.5); for(let y=0;y<=h+1e-6;y+=step){ const t=new THREE.Mesh(new THREE.BoxGeometry(y%(step*2)<1e-6?.08:.05,.006*(h>20?20:1),.012),m); t.position.set(-.03,y,0); g.add(t);} g.position.set(x,0,z); return g; }
+// ───────────── world ─────────────
+let S, cam, seg, cueFn, objs={}, dom={};
+function world(fogN=10,fogF=30){ S=new THREE.Scene(); S.background=new THREE.Color(0x0E0F12); S.fog=new THREE.Fog(0x0E0F12,fogN,fogF);
+  S.add(new THREE.HemisphereLight(0xdfe6ee,0x101114,0.6));
+  const key=new THREE.DirectionalLight(0xffffff,2.6); key.position.set(3,6,4); key.castShadow=true; key.shadow.mapSize.set(2048,2048); key.shadow.bias=-0.0004;
+  Object.assign(key.shadow.camera,{left:-4,right:4,top:5,bottom:-1,near:0.5,far:40}); S.add(key); objs.key=key;
+  const rim=new THREE.DirectionalLight(0xff7a3d,0.4); rim.position.set(-4,3,-3); S.add(rim);
+  const fl=new THREE.Mesh(new THREE.PlaneGeometry(2000,2000),new THREE.MeshStandardMaterial({color:0x15171B,roughness:.92})); fl.rotation.x=-Math.PI/2; fl.receiveShadow=true; S.add(fl);
+  const gr=new THREE.GridHelper(400,800,0x262a31,0x1b1e23); gr.position.y=0.001; S.add(gr); objs.grid=gr;
+  cam=new THREE.PerspectiveCamera(35,W/H,0.01,3000); }
+function shadowBox(s){ const c=objs.key.shadow.camera; c.left=-s;c.right=s;c.top=s*1.3;c.bottom=-s*.2;c.far=Math.max(40,s*6); objs.key.position.set(s*.75,s*1.5,s); c.updateProjectionMatrix(); }
+function el(id,html,css=''){ let e=dom[id]; if(!e){ e=document.createElement('div'); e.className='a'; OV.appendChild(e); dom[id]=e; } if(html!==undefined && e._h!==html){ e.innerHTML=html; e._h=html; } if(css) e.style.cssText+=';'+css; return e; }
+function show(id,op){ const e=dom[id]; if(e) e.style.opacity=op; }
+function at(id,v3,dx=0,dy=0){ const p=v3.clone().project(cam); const e=dom[id]; if(!e) return; e.style.left=((p.x+1)/2*W+dx)+'px'; e.style.top=((1-p.y)/2*H+dy)+'px'; }
+function camTo(pos,look){ cam.position.copy(pos); cam.lookAt(look); }
+// frame(h,cx): straight-on camera that fits content of height h (m) centred at cx into the LEFT part of the frame
+function frame(h,cx=0,{sway=0,lift=0,w=0}={}){ h=Math.max(h,0.04); const D=Math.max(0.18+h*1.75, w>0?0.3+w*1.7:0); const lx=cx+(w>0?0.30:0.24)*D; if(h<0.15) lift+=D*0.32; cam.position.set(lx+Math.sin(sway)*D*0.25,0.06+h*0.55+lift+D*0.06,D); cam.lookAt(lx,h*0.5,0); }
+const showPerson=(p,h)=>{ if(p) p.visible=h>0.55; };
+const camLerp=(a,b,x)=>({p:a.p.clone().lerp(b.p,x),l:a.l.clone().lerp(b.l,x)});
+function hud(txt){ el('hud',`<div style="display:flex;align-items:center;gap:14px"><img src="/brand/money_to_scale/renders/profile_800.png" style="width:44px;height:44px;border-radius:50%"><span class="cap st" style="font-size:20px">${txt}</span></div>`,'left:60px;top:48px'); }
+function title(top,sub,op=1){ el('t1',top,'left:0;right:0;text-align:center;top:70px;font-size:64px;font-weight:900;letter-spacing:-1px'); el('t2',sub,'left:0;right:0;text-align:center;top:146px;font-size:30px;font-weight:800;letter-spacing:4px;color:#FF6A1A'); show('t1',op); show('t2',op); }
+// ───────────── scenes ─────────────
+const SC={};
+const CR=1e7;
+SC.chapter={build(){ world(); camTo(V(0,1.2,4),V(0,0.6,0)); objs.c=column(500,CR,{x:0.9}); objs.c.setValue(CR); S.add(objs.c); },
+ update(t,d,c,p){ const a=eo(P(t,0,.7)), o=1-P(t,d-.4,d);
+  el('cn',p.num,'left:150px;top:380px;font-size:200px;color:#FF6A1A').className='a mono'; el('ct',p.title,'left:150px;top:620px;font-size:110px;font-weight:900;letter-spacing:-2px');
+  el('cl','','left:150px;top:600px;height:8px;background:#EDE7D6;width:'+(eo(P(t,.15,1.1))*700)+'px');
+  for(const k of ['cn','ct','cl']) show(k,a*o); const ang=t*.12; camTo(V(Math.sin(ang)*4+0.9,1.2,Math.cos(ang)*4),V(0.9,1,0)); }};
+SC.open_tower={build(){ world(8,26); objs.c=column(500,CR); objs.c.setValue(CR); S.add(objs.c); objs.p=person({x:.62}); S.add(objs.p); objs.r=rule(-.25,2.2); S.add(objs.r); },
+ update(t,d,c){ const cb=c("build")||d*.6;
+  objs.p.visible=eio(P(t,0.6,cb+1.5))>0.55; const x=eio(P(t,0.6,cb+1.5)); frame(lerp(0.5,2.3,x),0.3,{sway:.15*(1-x)}); cam.position.y+=lerp(1.6,0,x); cam.lookAt(cam.position.x,lerp(1.95,1.15,x),0);
+  el('n','₹1,00,00,000','left:1150px;top:420px;font-size:96px').className='a mono'; dom.n.classList.add('or');
+  el('s','1 CRORE · IN ₹500 NOTES','left:1150px;top:540px;font-size:30px').className='a cap st';
+  el('h','2.2 m'); dom.h.className='a lbl or'; at('h',V(-.25,2.28,0),0,-46); show('h',eo(P(t,cb,cb+.6)));
+  hud('Money To Scale'); }};
+SC.open_question={build(){ SC.open_tower.build(); },
+ update(t,d,c){ frame(2.3,0.3,{sway:t*.03}); const qs=[['long','How long does it take?'],['worth','What will it be worth?'],['enough','Is it even enough?']];
+  qs.forEach(([w,q],i)=>{ const tc=c(w)||1+i*3; el('q'+i,`<span class="mono or" style="font-size:44px;margin-right:22px">0${i+1}</span>${q}`,`left:1060px;top:${330+i*120}px;font-size:54px;font-weight:900`); show('q'+i,eo(P(t,tc-.4,tc+.2))); });
+  hud('Money To Scale'); }};
+SC.one_note={build(){ world(3,10); const N=NOTES[500]; objs.n=new THREE.Mesh(new THREE.BoxGeometry(N.w,0.00011*8,N.d),noteMats(500)); objs.n.castShadow=true; objs.n.position.y=.06; S.add(objs.n); },
+ update(t,d,c){ const cw=c('hundred')||2, cs=c('sixtysix')||c('wide')||4, ct=c('thickness')||7; objs.n.rotation.y=.35+t*.05; objs.n.rotation.x=lerp(0,-.18,eio(P(t,ct-1,ct+1)));
+  const z=lerp(.42,.26,eio(P(t,ct-1,ct+1.5))); camTo(V(.12,.16,z),V(0,.06,0));
+  el('a','150 mm'); dom.a.className='a lbl'; at('a',V(0,.075,.05),0,-70); show('a',eo(P(t,cw-.3,cw+.3)));
+  el('b','66 mm'); dom.b.className='a lbl'; at('b',V(.09,.07,0),40,-10); show('b',eo(P(t,cs-.3,cs+.3)));
+  el('c','≈ 0.11 mm thick'); dom.c.className='a lbl or'; at('c',V(0,.05,0),0,40); show('c',eo(P(t,ct,ct+.5)));
+  el('s','₹500 · MAHATMA GANDHI NEW SERIES','left:0;right:0;text-align:center;top:930px;font-size:26px').className='a cap dim'; hud('01 · The Stack'); }};
+SC.one_bundle={build(){ world(3,10); objs.c=column(500,50000); S.add(objs.c); },
+ update(t,d,c){ const cb=c('bundle')||2; const v=50000*eio(P(t,.3,cb+.5)); objs.c.setValue(v); camTo(V(.22,.12,.3),V(0,.012,0));
+  el('n','₹'+inr(Math.round(v/500)*500),'left:0;right:0;text-align:center;top:760px;font-size:90px').className='a mono';
+  el('s',`${Math.round(v/500)} NOTES · ${(v/500*0.11).toFixed(1)} mm`,'left:0;right:0;text-align:center;top:870px;font-size:30px').className='a cap st'; hud('01 · The Stack'); }};
+SC.build_crore={build(){ world(8,26); objs.c=column(500,CR); S.add(objs.c); objs.p=person({x:.62}); S.add(objs.p); objs.r=rule(-.25,2.2); S.add(objs.r); },
+ update(t,d,c){ const cs=c('stacked')||d*.4, ct=c('taller')||d*.7; const v=CR*eio(P(t,.2,cs+1.2)); objs.c.setValue(v); const h=objs.c.height;
+  objs.p.visible=t>ct-.6; objs.r.visible=t>cs; frame(Math.max(h*1.08,objs.p.visible?2.45:0),objs.p.visible?0.3:0,{sway:.25-t*.01});
+  el('n','₹'+inr(Math.round(v/50000)*50000),'left:1180px;top:430px;font-size:76px').className='a mono'; dom.n.classList.toggle('or',v>=CR-1);
+  el('s',`${inr(Math.round(v/500))} NOTES · ${Math.round(v/50000)} BUNDLES`,'left:1180px;top:530px;font-size:26px').className='a cap st';
+  el('h','2.2 m'); dom.h.className='a lbl or'; at('h',V(-.25,2.28,0),0,-46); show('h',eo(P(t,cs+1,cs+1.6)));
+  el('pp','1.75 m'); dom.pp.className='a lbl'; at('pp',V(.62,1.82,0),0,-46); show('pp',eo(P(t,ct,ct+.6))); hud('01 · The Stack'); }};
+SC.small_notes={build(){ world(40,900); shadowBox(70);
+  objs.a=column(500,CR,{x:0}); objs.a.setValue(CR); S.add(objs.a); objs.p=person({x:.6}); S.add(objs.p);
+  objs.b=column(100,CR,{x:3.2}); S.add(objs.b);
+  const bm=new THREE.MeshStandardMaterial({color:0x2a2e35,roughness:.8,transparent:true,opacity:.92}); const bld=new THREE.Group();
+  for(let i=0;i<3;i++){ const f=new THREE.Mesh(new THREE.BoxGeometry(6,3.5,4),bm); f.position.y=1.75+i*3.5; f.castShadow=true; bld.add(f); const e=new THREE.LineSegments(new THREE.EdgesGeometry(f.geometry),new THREE.LineBasicMaterial({color:0x4a505a})); e.position.copy(f.position); bld.add(e);} bld.position.set(8.2,0,-1); S.add(bld); objs.bld=bld;
+  objs.c=column(10,CR,{x:28}); S.add(objs.c);
+  // Qutub Minar: 72.5 m, base Ø ≈ 14.3 m, top Ø ≈ 2.7 m, five storeys with balconies (stylised)
+  const qm=new THREE.MeshStandardMaterial({color:0x8a5a44,roughness:.85}); const q=new THREE.Group(); const H_=[0,24.5,39.5,51,61.5,72.5]; const r=y=>lerp(7.15,1.35,y/72.5);
+  for(let i=0;i<5;i++){ const y0=H_[i],y1=H_[i+1]; const m=new THREE.Mesh(new THREE.CylinderGeometry(r(y1),r(y0),y1-y0,24,1),qm); m.position.y=(y0+y1)/2; m.castShadow=true; q.add(m);
+    const bal=new THREE.Mesh(new THREE.CylinderGeometry(r(y1)+0.9,r(y1)+0.9,0.8,24),qm); bal.position.y=y1-0.4; q.add(bal);} q.position.set(52,0,-6); S.add(q); objs.q=q;
+  const mk=(x,h)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(h>50?0.8:0.12,h,h>50?0.8:0.12),new THREE.MeshBasicMaterial({color:0xFF6A1A,transparent:true,opacity:.85})); m.position.set(x,h/2,0); m.scale.y=0.0001; S.add(m); return m;};
+  objs.m1=mk(3.2+(0.25),11); objs.m2=mk(28+1.5,110); },
+ update(t,d,c){ const c1=c('hundred')||3, c2=c('ten',2)||c('ten')||d*.5, cq=c('qutub')||d*.75;
+  const g1=eio(P(t,c1-.5,c1+2.5)), g2=eio(P(t,c2-.3,c2+4)); objs.b.setValue(CR*g1); objs.c.setValue(CR*g2);
+  objs.m1.scale.y=Math.max(1e-4,g1); objs.m1.position.y=11*g1/2; objs.m2.scale.y=Math.max(1e-4,g2); objs.m2.position.y=110*g2/2;
+  const k0={p:V(1.2,1.4,5),l:V(.3,1.0,0)}, k1={p:V(5,6,26),l:V(4,4.5,0)}, k2={p:V(32,48,210),l:V(36,44,0)};
+  const k=t<c2-.5?camLerp(k0,k1,eio(P(t,c1-.8,c1+2.5))):camLerp(k1,k2,eio(P(t,c2-.5,c2+4))); camTo(k.p,k.l);
+  const lb=(id,txt,v3,op,cls='a lbl')=>{el(id,txt);dom[id].className=cls;at(id,v3,0,-50);show(id,op);};
+  lb('l5','₹500 · 2.2 m',V(0,2.3,0),1-P(t,c2,c2+1));
+  lb('l1','₹100 · 11 m',V(3.2,11.3,0),eo(P(t,c1+2,c1+2.6)));
+  lb('l2','3 STOREYS',V(8.2,10.8,-1),eo(P(t,c1+2.3,c1+3))*(1-P(t,c2+1,c2+2)),'a lbl dim');
+  lb('l3','₹10 NOTES · 110 m TALL · ONLY 12 cm WIDE',V(28,111,0),eo(P(t,c2+3,c2+3.8)),'a lbl or');
+  lb('l4','QUTUB MINAR · 72.5 m',V(52,74,-6),eo(P(t,cq-.3,cq+.4)));
+  el('s',t<c2?'SAME ₹1 CRORE · ₹100 NOTES':'SAME ₹1 CRORE · ₹10 NOTES','left:0;right:0;text-align:center;top:950px;font-size:28px').className='a cap st'; show('s',eo(P(t,c1-.2,c1+.4))); hud('01 · The Stack'); }};
+SC.count_clock={build(){ SC.open_tower.build(); },
+ update(t,d,c){ frame(2.3,0.3,{sway:t*.03}); const x=eio(P(t,.5,d*.62)); const s=Math.round(20000*x);
+  const hh=Math.floor(s/3600),mm=Math.floor(s%3600/60),ss=s%60;
+  el('clk',`${hh}:${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')}`,'left:1150px;top:380px;font-size:120px').className='a mono'; dom.clk.classList.toggle('or',s>=20000);
+  el('cs',`${inr(s)} OF 20,000 NOTES COUNTED`,'left:1150px;top:520px;font-size:26px').className='a cap st';
+  el('cs2','ONE NOTE PER SECOND · NO BREAKS','left:1150px;top:570px;font-size:22px').className='a cap dim'; hud('01 · The Stack'); }};
+const SAVE=(m)=>20000*m, INV=(m)=>{const r=.01; return 20000*((1+r)**m-1)/r*(1+r);};
+function towersRace(build=true){ world(8,30); objs.s=column(500,CR,{x:-.35}); objs.i=column(500,CR,{x:.35,accent:'#FF6A1A'}); objs.p=person({x:1.1}); S.add(objs.s,objs.i,objs.p); }
+function raceHUD(m,showInv=true){ const y=m/12; const age=25+y;
+  el('yr',`YEAR ${y.toFixed(1)}`,'left:1240px;top:300px;font-size:64px').className='a mono';
+  el('ag',`AGE ${Math.floor(age)}`,'left:1240px;top:385px;font-size:26px').className='a cap dim';
+  el('sv',`<span class="dim">SAVING ONLY</span><br><span class="mono" style="font-size:44px">₹${inr(Math.min(CR,SAVE(m)))}</span>`,'left:1240px;top:460px;font-size:24px;font-weight:800;letter-spacing:2px');
+  el('iv',`<span class="or">INVESTED · 12% ASSUMED</span><br><span class="mono or" style="font-size:44px">₹${inr(Math.min(CR,INV(m)))}</span>`,'left:1240px;top:590px;font-size:24px;font-weight:800;letter-spacing:2px'); show('iv',showInv?1:0); }
+SC.save_tower={build(){ world(8,26); objs.s=column(500,CR,{x:0}); objs.p=person({x:.6}); S.add(objs.s,objs.p); },
+ update(t,d,c){ const m=Math.floor(P(t,.8,d-.5)*12); objs.s.setValue(SAVE(m)); objs.p.visible=false; frame(0.06,0,{sway:.3});
+  el('a','₹20,000 / MONTH','left:1180px;top:380px;font-size:60px;font-weight:900'); el('b',`MONTH ${m} · ₹${inr(SAVE(m))}`,'left:1180px;top:470px;font-size:28px').className='a cap st';
+  el('c','= 40 NOTES OF ₹500 EVERY MONTH','left:1180px;top:520px;font-size:22px').className='a cap dim'; hud('02 · Saving It'); }};
+SC.save_timeline={build(){ world(8,26); objs.s=column(500,CR,{x:0}); objs.p=person({x:.6}); objs.r=rule(-.25,2.2); S.add(objs.s,objs.p,objs.r); },
+ update(t,d,c){ const cf=c('five')||d*.5; const m=500*eio(P(t,.5,cf+1.2)); objs.s.setValue(SAVE(m)); const h=objs.s.height; showPerson(objs.p,h); objs.r.visible=h>0.55;
+  frame(Math.max(h,objs.p.visible?1.9:0),objs.p.visible?0.25:0,{sway:.2});
+  raceHUD(m,false); if(m>=499.9){ el('dn','41 YEARS 8 MONTHS','left:1240px;top:720px;font-size:30px').className='a chip'; } hud('02 · Saving It'); }};
+SC.race_setup={build(){ towersRace(); },
+ update(t,d,c){ objs.s.setValue(CR); objs.i.setValue(0); objs.p.visible=true; frame(2.7,-0.15,{w:1.9,sway:t*.02});
+  if(!objs.fp){ objs.fp=new THREE.Mesh(new THREE.PlaneGeometry(.15,.066),new THREE.MeshBasicMaterial({color:0xFF6A1A,transparent:true,opacity:.8})); objs.fp.rotation.x=-Math.PI/2; objs.fp.position.set(.35,.002,0); S.add(objs.fp); }
+  objs.fp.material.opacity=.45+.4*Math.sin(t*3)**2; const ca=c('assume')||d*.5;
+  el('lb1','SAVING · 41 YRS 8 MO'); dom.lb1.className='a lbl dim'; at('lb1',V(-.35,2.2,0),0,-50);
+  el('lb2','INVESTED · STARTS HERE'); dom.lb2.className='a lbl or'; at('lb2',V(.35,0,.1),0,14); show('lb2',eo(P(t,1,1.6)));
+  el('ch','12% A YEAR · ASSUMED, NOT GUARANTEED','left:1180px;top:420px').className='a chip'; show('ch',eo(P(t,ca,ca+.5)));
+  el('ch2','Real returns vary and can be lower.','left:1180px;top:500px;font-size:30px;font-weight:600;color:#CFC8B3'); show('ch2',eo(P(t,ca+2,ca+2.6))); hud('03 · Investing It'); }};
+SC.race_early={build(){ towersRace(); },
+ update(t,d,c){ const m=36*eio(P(t,.3,d-1)); objs.s.setValue(SAVE(m)); objs.i.setValue(INV(m)); const h=objs.i.height; showPerson(objs.p,h); frame(Math.max(h*1.1,.08),objs.p.visible?.35:0,{sway:.2,w:objs.p.visible?1.6:0.85}); raceHUD(m);
+  const c1=c('sixteen')||d*.45; el('df','+₹16,187 AFTER YEAR 1','left:1240px;top:740px').className='a chip'; show('df',eo(P(t,c1-.2,c1+.4))); hud('03 · Investing It'); }};
+SC.race_curve={build(){ towersRace(); },
+ update(t,d,c){ const m=lerp(36,168,eio(P(t,.3,d-1))); objs.s.setValue(SAVE(m)); objs.i.setValue(INV(m)); const h=objs.i.height; showPerson(objs.p,h);
+  frame(Math.max(h*1.1,objs.p.visible?2.1:0),objs.p.visible?0.35:0,{w:objs.p.visible?1.6:0.85}); raceHUD(m);
+  // chart: value vs year
+  let pS='',pI=''; for(let k=0;k<=m;k+=2){ const x=40+k/180*600, ys=330-SAVE(k)/CR*260, yi=330-INV(k)/CR*260; pS+=(k?'L':'M')+x+' '+ys; pI+=(k?'L':'M')+x+' '+yi; }
+  el('chart',`<svg width="700" height="370"><path d="M40 330 H660 M40 70 V330" stroke="#3a3f47" stroke-width="2" fill="none"/><path d="${pS}" stroke="#CFC8B3" stroke-width="5" fill="none"/><path d="${pI}" stroke="#FF6A1A" stroke-width="6" fill="none"/><text x="660" y="360" fill="#9E977F" font-size="20" text-anchor="end" font-weight="800">YEARS</text></svg>`,'left:1200px;top:700px');
+  const g=c('fourteen')||d*.7; el('gy',`GROWTH THAT YEAR (YR ${Math.max(1,Math.ceil(m/12))}): ₹${inr(Math.max(0,INV(Math.ceil(m/12)*12)-INV(Math.ceil(m/12)*12-12)-240000))}`,'left:1240px;top:665px;font-size:22px').className='a cap or'; hud('03 · Investing It'); }};
+SC.race_finish={build(){ towersRace(); objs.r=rule(-.75,2.2); S.add(objs.r); },
+ update(t,d,c){ const m=lerp(168,179.2,eio(P(t,.3,4))); objs.s.setValue(SAVE(m)); objs.i.setValue(INV(m)); frame(2.45,0.2,{w:1.9}); raceHUD(m);
+  const cs=c('sooner')||d*.7; el('w','≈ 27 YEARS SOONER','left:1240px;top:740px;font-size:40px').className='a chip'; show('w',eo(P(t,cs-.3,cs+.3)));
+  el('fr','≈ 36%'); dom.fr.className='a lbl'; at('fr',V(-.35,objs.s.height,0),0,-46); show('fr',eo(P(t,4,4.6))); hud('03 · Investing It'); }};
+SC.race_split={build(){ world(8,26); objs.a=column(500,3584754,{x:0}); objs.a.setValue(3584754); objs.b=column(500,CR-3584754,{x:0,accent:'#FF6A1A'}); objs.b.setValue(CR-3584754); objs.b.position.y=objs.a.height; S.add(objs.a,objs.b); objs.p=person({x:.6}); S.add(objs.p); },
+ update(t,d,c){ const cy=c('put')||2, cg=c('growth')||d*.5; frame(2.3,-0.45,{sway:t*.02,w:2.2}); objs.b.visible=t>cg-1;
+  el('y','YOUR MONEY · ₹35.8 LAKH'); dom.y.className='a lbl'; at('y',V(-.1,objs.a.height*.5,0),-30,0); dom.y.style.transform='translate(-100%,0)'; show('y',eo(P(t,cy,cy+.5)));
+  el('g','GROWTH · ₹64.2 LAKH'); dom.g.className='a lbl or'; at('g',V(-.1,objs.a.height+objs.b.height*.5,0),-30,0); dom.g.style.transform='translate(-100%,0)'; show('g',eo(P(t,cg-.5,cg)));
+  el('tm','MOST OF THE TOWER IS TIME.','left:1150px;top:460px;font-size:46px;font-weight:900'); show('tm',eo(P(t,d-4,d-3.2))); hud('03 · Investing It'); }};
+SC.rates_compare={build(){ world(); camTo(V(0,1.2,5),V(0,.8,0)); },
+ update(t,d,c){ const rows=[['SAVING ONLY',41.67,'#9E977F','save'],['8% ASSUMED',18.3,'#CFC8B3','eight'],['10% ASSUMED',16.4,'#EDE7D6','ten'],['12% ASSUMED',14.9,'#FF6A1A','twelve']];
+  let s=`<svg width="1500" height="560">`; rows.forEach(([n,y,col,w],i)=>{ const tc=i===0?.5:(c(w)||1+i*2); const p=eo(P(t,tc-.3,tc+1)); const yy=60+i*125; s+=`<text x="0" y="${yy+40}" fill="#CFC8B3" font-size="28" font-weight="800" letter-spacing="3">${n}</text><rect x="320" y="${yy}" width="${y/42*900*p}" height="56" fill="${col}"/><text x="${334+y/42*900*p}" y="${yy+40}" fill="#EDE7D6" font-size="34" font-family="DejaVu Sans Mono" font-weight="700">${p>.98?y.toFixed(1)+' yrs':''}</text>`; }); s+=`</svg>`;
+  el('bars',s,'left:210px;top:300px'); el('hd','YEARS TO ₹1 CRORE AT ₹20,000/MONTH','left:210px;top:220px;font-size:30px').className='a cap st'; hud('03 · Investing It'); }};
+SC.inflation_shrink={build(){ world(8,26); objs.ghost=new THREE.Mesh(new THREE.BoxGeometry(.15,2.2,.066),new THREE.MeshBasicMaterial({color:0xEDE7D6,wireframe:true,transparent:true,opacity:.18})); objs.ghost.position.y=1.1; S.add(objs.ghost);
+  objs.c=column(500,CR); S.add(objs.c); objs.p=person({x:.62}); S.add(objs.p); },
+ update(t,d,c){ const c4=c('four',2)||d*.45, c6=c('six')||d*.75; const v=t<c4?CR:(t<c6?lerp(CR,4563869,eio(P(t,c4,c4+2))):lerp(4563869,3118047,eio(P(t,c6,c6+2)))); objs.c.setValue(v);
+  frame(2.3,0.3,{sway:t*.02});
+  el('a','₹1 CRORE IN 20 YEARS','left:1180px;top:340px;font-size:30px').className='a cap st';
+  el('b',`BUYS WHAT ₹${(v/1e5).toFixed(1)} LAKH BUYS TODAY`,'left:1180px;top:395px;font-size:40px;font-weight:900'); show('b',eo(P(t,c4-.2,c4+.4)));
+  el('r', t<c6?'AT 4% INFLATION (RBI TARGET)':'AT 6% INFLATION','left:1180px;top:470px;font-size:24px').className='a cap or'; show('r',eo(P(t,c4-.2,c4+.4))); hud('04 · What It Will Be Worth'); }};
+SC.inflation_ghost={build(){ SC.inflation_shrink.build(); objs.c.setValue(3118047); },
+ update(t,d,c){ frame(2.3,0.3,{sway:.1+t*.03}); objs.c.setValue(3118047);
+  el('lab','₹1,00,00,000 ON PAPER'); dom.lab.className='a lbl dim'; at('lab',V(0,2.25,0),0,-50);
+  el('lab2','REAL VALUE'); dom.lab2.className='a lbl or'; at('lab2',V(0,objs.c.height,0),0,-50); hud('04 · What It Will Be Worth'); }};
+SC.withdraw={build(){ world(8,26); objs.c=column(500,CR); S.add(objs.c); objs.p=person({x:.62}); S.add(objs.p); },
+ update(t,d,c){ const cf=c('four')||3; const yrs=3*eio(P(t,cf+1,d-1)); objs.c.setValue(CR-400000*yrs); frame(2.3,0.3,{sway:t*.02});
+  el('a','4% A YEAR = ₹4,00,000','left:1180px;top:380px;font-size:52px;font-weight:900'); show('a',eo(P(t,cf,cf+.5)));
+  el('b','≈ ₹33,333 A MONTH','left:1180px;top:460px;font-size:40px').className='a mono or'; show('b',eo(P(t,cf+2,cf+2.5)));
+  el('c','= 8 BUNDLES OFF THE TOP, EVERY YEAR','left:1180px;top:530px;font-size:22px').className='a cap dim'; show('c',eo(P(t,cf+3,cf+3.5))); hud('05 · Is It Enough?'); }};
+SC.withdraw_future={build(){ world(2,8); objs.a=column(500,33333,{x:-.12}); objs.a.setValue(33333); objs.b=column(500,33333,{x:.12,accent:'#FF6A1A'}); objs.b.setValue(33333); S.add(objs.a,objs.b); },
+ update(t,d,c){ const cs=c('six')||d*.5; objs.b.setValue(lerp(33333,10393,eio(P(t,cs,cs+2.5)))); camTo(V(.12,.11,.55),V(0,.012,0));
+  el('l1','₹33,333 TODAY'); dom.l1.className='a lbl'; at('l1',V(-.12,0,.05),0,24);
+  el('l2',`FEELS LIKE ₹${inr(Math.round(lerp(33333,10393,eio(P(t,cs,cs+2.5)))))} IN 20 YRS`); dom.l2.className='a lbl or'; at('l2',V(.12,0,.05),0,24); show('l2',eo(P(t,cs-.3,cs+.3)));
+  el('n','4% RULE: FROM US RESEARCH · LIKELY OPTIMISTIC FOR INDIA','left:0;right:0;text-align:center;top:930px;font-size:22px').className='a cap dim'; hud('05 · Is It Enough?'); }};
+function stepRace(steps){ return {build(){ world(8,30); objs.t=steps.map((s,i)=>{const c=column(500,CR,{x:-.5+i*.5,accent:i?'#FF6A1A':null}); S.add(c); return c;}); objs.p=person({x:1.1}); S.add(objs.p); },
+ update(t,d,c){ const mm=180*eio(P(t,1,d-2)); const vals=steps.map(st=>{ let v=0,P0=20000; for(let m=0;m<Math.floor(mm);m++){ if(m>0&&m%12==0)P0*=1+st; v=(v+P0)*1.01;} return Math.min(CR,v);});
+  objs.t.forEach((c,i)=>c.setValue(vals[i])); const h=Math.max(...objs.t.map(c=>c.height)); showPerson(objs.p,h); frame(Math.max(h*1.15,objs.p.visible?2.1:0.06),objs.p.visible?.3:0,{sway:.1,w:objs.p.visible?1.9:1.2});
+  const nm=['FLAT','+5%/YR','+10%/YR'], fin=['15 Y','13 Y 5 M','12 Y'];
+  steps.forEach((s,i)=>{ el('s'+i,vals[i]>=CR-1?fin[i]:nm[i]); dom['s'+i].className='a lbl '+(vals[i]>=CR-1?'or':'st'); at('s'+i,V(-.5+i*.5,objs.t[i].height,0),0,-54); });
+  el('lg','EACH TOWER STARTS AT ₹20,000/MONTH','left:1300px;top:440px;font-size:22px').className='a cap st';
+  el('y',`YEAR ${(mm/12).toFixed(1)}`,'left:1300px;top:300px;font-size:60px').className='a mono'; el('as','12% A YEAR · ASSUMED','left:1300px;top:385px;font-size:22px').className='a cap dim'; hud('06 · The Two Levers'); }}; }
+SC.lever_stepup=stepRace([0,.05,.10]);
+SC.lever_time={build(){ world(12,60); shadowBox(10); const v=[64952691,35299138,18976351]; objs.t=v.map((x,i)=>{const c=column(500,x,{x:-1.2+i*1.2}); S.add(c); return c;}); objs.v=v; objs.p=person({x:2.2}); S.add(objs.p); },
+ update(t,d,c){ const cues=['twentyfive','thirty','thirtyfive'].map((w,i)=>c(w)||3+i*3); objs.t.forEach((col,i)=>col.setValue(objs.v[i]*eio(P(t,cues[i]-.5,cues[i]+2.2))));
+  const z=eio(P(t,0.5,cues[0]+2.5)); const hh=lerp(2.4,16.5,z); frame(hh,-0.2,{w:3.8}); objs.p.visible=true;
+  const ages=['START AT 25','START AT 30','START AT 35'], amt=['₹6.5 CRORE','₹3.5 CRORE','₹1.9 CRORE'];
+  objs.t.forEach((col,i)=>{ el('g'+i,ages[i]); dom['g'+i].className='a lbl st'; dom['g'+i].style.fontSize='22px'; at('g'+i,V(-1.2+i*1.2,0,.1),0,12); show('g'+i,1-P(z,.15,.35)); });
+  objs.t.forEach((col,i)=>{ if(t<cues[i]-.5) col.setValue(120000*(i?1:1)); });
+  objs.t.forEach((col,i)=>{ el('a'+i,`${amt[i]}<br><span class="dim" style="font-size:20px">${ages[i]}</span>`); dom['a'+i].className='a lbl'+(i==0?' or':''); dom['a'+i].style.textAlign='center'; at('a'+i,V(-1.2+i*1.2,col.height,0),0,-80); show('a'+i,eo(P(t,cues[i]+1.5,cues[i]+2.2))); });
+  el('nt','₹10,000/MONTH UNTIL AGE 60 · 12% ASSUMED','left:0;right:0;text-align:center;top:960px;font-size:24px').className='a cap st'; hud('06 · The Two Levers'); }};
+SC.lever_halves={build(){ world(); camTo(V(0,1.2,5),V(0,.8,0)); },
+ update(t,d,c){ const ch=c('halves')||1, cl2=c('look')||d*.35; const ph1=1-P(t,cl2-1,cl2-.3);
+  el('h1','EVERY 5 YEARS YOU WAIT ≈ HALVES THE FINAL TOWER','left:0;right:0;text-align:center;top:420px;font-size:52px;font-weight:900'); show('h1',eo(P(t,ch-.3,ch+.4))*ph1);
+  el('h2','…while you invest only ₹6 lakh less.','left:0;right:0;text-align:center;top:510px;font-size:36px;font-weight:600;color:#CFC8B3'); show('h2',eo(P(t,ch+2,ch+2.6))*ph1);
+  const rows=[['10 YEARS',43041,'ten'],['15 YEARS',19819,'fifteen'],['20 YEARS',10009,'twenty']]; let s=`<svg width="1500" height="460">`;
+  rows.forEach(([n,v,w],i)=>{ const tc=c(w,2)||c(w)||cl2+2+i*2; const p=eo(P(t,tc-.3,tc+.8)); const yy=40+i*130; s+=`<text x="0" y="${yy+42}" fill="#CFC8B3" font-size="30" font-weight="800" letter-spacing="3">${n}</text><rect x="260" y="${yy}" width="${v/44000*900*p}" height="60" fill="${i?'#CFC8B3':'#FF6A1A'}"/><text x="${280+v/44000*900*p}" y="${yy+42}" fill="#EDE7D6" font-size="36" font-family="DejaVu Sans Mono" font-weight="700">${p>.98?'₹'+inr(v)+'/mo':''}</text>`; });
+  s+=`</svg>`; el('bars',s,'left:240px;top:360px'); show('bars',eo(P(t,cl2-.2,cl2+.4)));
+  el('bh','MONTHLY SIP NEEDED FOR ₹1 CRORE · 12% ASSUMED','left:240px;top:290px;font-size:28px').className='a cap st'; show('bh',eo(P(t,cl2-.2,cl2+.4))); hud('06 · The Two Levers'); }};
+SC.close={build(){ SC.open_tower.build(); },
+ update(t,d,c){ frame(2.3,0.3,{sway:.2+t*.03});
+  const lines=[['stack','2.2 METRES OF NOTES',''],['fortyone','41 YEARS IF YOU ONLY SAVE',''],['fifteen','≈ 15 IF YOU INVEST (12% ASSUMED)','or'],['less','WORTH LESS THAN IT LOOKS','']];
+  lines.forEach(([w,txt,cls],i)=>{ const tc=c(w)||2+i*3; el('c'+i,txt,`left:1180px;top:${330+i*80}px;font-size:34px`).className='a cap '+cls; show('c'+i,eo(P(t,tc-.2,tc+.4))); });
+  const cs=c('size')||d-3; el('fin','THE NUMBER STAYS THE SAME. THE SIZE DOESN\'T.','left:1150px;top:720px;width:700px;white-space:normal;line-height:1.15;font-size:40px;font-weight:900'); show('fin',eo(P(t,cs-1,cs))); hud('Money To Scale'); }};
+SC.endcard={build(){ world(); camTo(V(0,1.2,5),V(0,.8,0)); },
+ update(t,d,c){ const o=eo(P(t,.2,1))*(1-P(t,d-.6,d));
+  el('lg','<img src="/brand/money_to_scale/renders/profile_800.png" style="width:110px;height:110px;border-radius:50%">','left:160px;top:110px'); el('nm','MONEY TO SCALE','left:300px;top:130px;font-size:40px;font-weight:900;letter-spacing:6px');
+  el('tg','Money, shown at its real size.','left:300px;top:185px;font-size:26px;font-weight:600;color:#CFC8B3');
+  el('b1','<div style="width:960px;height:540px;border:3px solid #262a31;display:flex;align-items:center;justify-content:center;color:#5a5f68;font-size:26px;font-weight:800;letter-spacing:6px">NEXT VIDEO</div>','left:160px;top:380px');
+  el('b2','<div style="width:300px;height:300px;border-radius:50%;border:3px solid #262a31;display:flex;align-items:center;justify-content:center;color:#5a5f68;font-size:26px;font-weight:800;letter-spacing:6px">SUBSCRIBE</div>','left:1350px;top:500px');
+  el('dc','EDUCATION ONLY · NOT FINANCIAL ADVICE','left:160px;top:960px;font-size:20px').className='a cap dim'; for(const k of ['lg','nm','tg','b1','b2','dc']) show(k,o); }};
+// ───────────── driver ─────────────
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9]/g,'');}
+window.setSegment=(sg)=>{ seg=sg; OV.innerHTML=''; dom={}; objs={}; const W_=sg.words||[];
+  cueFn=(w,k=1)=>{ let n=0; for(const x of W_){ if(norm(x.w)===norm(w)){ n++; if(n===k) return x.s; } } return 0; };
+  SC[sg.visual].build(); };
+window.renderFrame=(t)=>{ const sc=SC[seg.visual]; sc.update(t,seg.dur,cueFn,seg.params||{});
+  const edge=Math.min(1,P(t,0,.18))*(1-P(t,seg.dur-.12,seg.dur)); OV.style.opacity=edge; R.domElement.style.opacity=edge; R.render(S,cam); };
+window.ready=true;
+</script></body></html>
