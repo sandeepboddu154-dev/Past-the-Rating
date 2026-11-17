@@ -1,0 +1,86 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:'D';src:local('Inter Display Black');font-weight:900}
+@font-face{font-family:'D';src:local('Inter Display ExtraBold');font-weight:800}
+html,body{margin:0;background:#0b0b0c;overflow:hidden;width:1080px;height:1920px}
+#hud{position:absolute;inset:0;pointer-events:none;font-family:'D',sans-serif;color:#f4f4f2}
+.k{position:absolute;left:0;right:0;text-align:center}
+.mono{font-family:'DejaVu Sans Mono',monospace;font-weight:700}
+</style></head><body>
+<div id="hud">
+ <div class="k" id="t1" style="top:150px;font-size:86px;font-weight:900;letter-spacing:-1px">₹1 CRORE</div>
+ <div class="k" id="t2" style="top:250px;font-size:86px;font-weight:900;color:#FF5A1F;letter-spacing:-1px">TO SCALE.</div>
+ <div class="k mono" id="cnt" style="top:1560px;font-size:96px">₹0</div>
+ <div class="k" id="sub" style="top:1680px;font-size:36px;font-weight:800;color:#C9CDD2;letter-spacing:4px">IN ₹500 NOTES</div>
+ <div class="k" id="h" style="top:1240px;font-size:30px;font-weight:800;color:#C9CDD2;letter-spacing:3px;opacity:0">1.75 m PERSON</div>
+</div>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const W=1080,H=1920;
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); r.setSize(W,H); r.setPixelRatio(1);
+r.shadowMap.enabled=true; r.shadowMap.type=THREE.PCFSoftShadowMap; r.toneMapping=THREE.ACESFilmicToneMapping; r.outputColorSpace=THREE.SRGBColorSpace;
+r.domElement.style.position='absolute'; document.body.prepend(r.domElement);
+const s=new THREE.Scene(); s.background=new THREE.Color(0x0b0b0c); s.fog=new THREE.Fog(0x0b0b0c,8,22);
+const cam=new THREE.PerspectiveCamera(32,W/H,0.05,100);
+s.add(new THREE.HemisphereLight(0xdfe6ee,0x101114,0.55));
+const key=new THREE.DirectionalLight(0xffffff,2.6); key.position.set(3,6,4); key.castShadow=true; key.shadow.mapSize.set(2048,2048);
+Object.assign(key.shadow.camera,{left:-3,right:3,top:4,bottom:-1}); s.add(key);
+const rim=new THREE.DirectionalLight(0xff7a3d,0.45); rim.position.set(-4,3,-3); s.add(rim);
+const floor=new THREE.Mesh(new THREE.CircleGeometry(12,64),new THREE.MeshStandardMaterial({color:0x16181c,roughness:.9})); floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; s.add(floor);
+const grid=new THREE.GridHelper(24,48,0x2a2e35,0x1f2228); grid.position.y=0.001; s.add(grid);
+// ₹500 bundle: 150 x 66 mm, 100 notes ≈ 10 mm (≈0.1 mm per note). 200 bundles = ₹1 crore. Stacked 10 high per column? -> single tower ~2.0 m
+// Arrange: one tower of 200 bundles (2.0 m) for maximum clarity vs a person.
+const N=200, bw=0.150, bd=0.066, bh=0.010;
+// note texture (procedural): stone-grey with band + strap
+const cv=document.createElement('canvas'); cv.width=512; cv.height=64; const g=cv.getContext('2d');
+g.fillStyle='#9a9a8c'; g.fillRect(0,0,512,64); for(let i=0;i<64;i+=2){g.fillStyle=i%4?'#8d8d80':'#a6a697'; g.fillRect(0,i,512,1);}
+g.fillStyle='#e8e2d0'; g.fillRect(236,0,40,64);
+const tex=new THREE.CanvasTexture(cv); tex.colorSpace=THREE.SRGBColorSpace;
+const topc=document.createElement('canvas'); topc.width=600; topc.height=264; const tg=topc.getContext('2d');
+const gr=tg.createLinearGradient(0,0,600,264); gr.addColorStop(0,'#b7b5a4'); gr.addColorStop(1,'#8f8d7e'); tg.fillStyle=gr; tg.fillRect(0,0,600,264);
+tg.strokeStyle='#6f6d60'; tg.lineWidth=6; tg.strokeRect(10,10,580,244); tg.fillStyle='#e8e2d0'; tg.fillRect(270,0,60,264);
+tg.fillStyle='#4e4c43'; tg.font='bold 64px DejaVu Sans'; tg.fillText('500',40,90); tg.beginPath(); tg.arc(470,140,70,0,Math.PI*2); tg.fillStyle='#a3a190'; tg.fill();
+const ttex=new THREE.CanvasTexture(topc); ttex.colorSpace=THREE.SRGBColorSpace;
+const side=new THREE.MeshStandardMaterial({map:tex,roughness:.85}), top=new THREE.MeshStandardMaterial({map:ttex,roughness:.8});
+const geo=new THREE.BoxGeometry(bw,bh,bd);
+const mats=[side,side,top,top,side,side];
+const bundles=[]; for(let i=0;i<N;i++){const m=new THREE.Mesh(geo,mats); m.castShadow=true; m.receiveShadow=true; m.visible=false; s.add(m); bundles.push(m);}
+// person silhouette 1.75 m (capsule-ish) for scale
+const pm=new THREE.MeshStandardMaterial({color:0x3a3f47,roughness:.6});
+const person=new THREE.Group();
+const cap=(r,l,x,y,z,rz=0)=>{const m=new THREE.Mesh(new THREE.CapsuleGeometry(r,l,8,16),pm); m.position.set(x,y,z); m.rotation.z=rz; m.castShadow=true; person.add(m); return m;};
+// stylised 1.75 m mannequin (proportions from standard anthropometry, ~7.5 heads tall)
+cap(0.065,0.74,-0.09,0.43,0); cap(0.065,0.74,0.09,0.43,0);            // legs (to ~0.86 m)
+cap(0.17,0.42,0,1.13,0);                                                // torso (~0.86–1.47 m)
+cap(0.05,0.56,-0.25,1.12,0,0.12); cap(0.05,0.56,0.25,1.12,0,-0.12);    // arms
+const neck=cap(0.05,0.04,0,1.50,0);
+const head=new THREE.Mesh(new THREE.SphereGeometry(0.11,32,20),pm); head.scale.set(1,1.18,1.05); head.position.y=1.62; head.castShadow=true; person.add(head);
+person.position.set(0.62,0,0.0); s.add(person);
+const headWorld=new THREE.Vector3();
+const ease=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2, cl=x=>Math.min(1,Math.max(0,x));
+const fmtINR=n=>{n=Math.round(n); const s=String(n); if(s.length<=3) return s; const last=s.slice(-3); return s.slice(0,-3).replace(/\B(?=(\d{2})+(?!\d))/g,',')+','+last;};
+window.renderAt=(t)=>{ // t seconds, total 12
+  const build=cl((t-0.6)/7.0); const k=Math.floor(eio(build)*N);
+  for(let i=0;i<N;i++){ const b=bundles[i]; b.visible=i<=k && build>0;
+    const land=0.0005+i*bh+bh/2; let y=land;
+    if(i===k){ const frac=(eio(build)*N)%1; y=land+(1-ease(frac))*0.25; }
+    b.position.set(0,y,0); b.rotation.y=(i%2?0.012:-0.012); }
+  const hgt=Math.max(0.3,k*bh);
+  // camera: close on the growing stack, then a clean pull-back to a front side-by-side with the person
+  const pull=eio(cl((t-7.4)/2.8));
+  const ang=0.75+t*0.05;
+  const cx0=Math.sin(ang)*(0.9+hgt*0.55), cz0=Math.cos(ang)*(0.9+hgt*0.55), cy0=0.25+hgt*0.55;
+  const cx1=0.28, cy1=1.05, cz1=5.2;
+  cam.position.set(cx0+(cx1-cx0)*pull, cy0+(cy1-cy0)*pull, cz0+(cz1-cz0)*pull);
+  cam.lookAt(0.28*pull, hgt*0.5*(1-pull)+1.0*pull, 0);
+  person.visible = t>7.2; person.children.forEach(c=>{c.material.opacity=1});
+  document.getElementById('cnt').textContent='₹'+fmtINR(Math.min(10000000,(build>0?k+1:0)*50000));
+  document.getElementById('cnt').style.color = k>=N?'#FF5A1F':'#F4F4F2';
+  head.getWorldPosition(headWorld); const pr=headWorld.clone().add(new THREE.Vector3(0,0.2,0)).project(cam);
+  const hl=document.getElementById('h'); hl.style.top=((1-pr.y)/2*H-20)+'px'; hl.style.left=((pr.x+1)/2*W-300)+'px'; hl.style.right='auto'; hl.style.width='600px';
+  hl.style.opacity = cl((t-8.4)/0.6);
+  document.getElementById('sub').textContent = k>=N ? '200 BUNDLES · ≈2 METRES TALL' : 'IN ₹500 NOTES';
+  r.render(s,cam);
+};
+window.ready=true;
+</script></body></html>
