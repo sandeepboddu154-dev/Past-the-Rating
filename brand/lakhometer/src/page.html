@@ -11,8 +11,8 @@ const q=new URLSearchParams(location.search), kind=q.get('k');
 const R=document.getElementById('root');
 if(kind==='profile') R.innerHTML=mark({size:800});
 if(kind==='watermark') R.innerHTML=mark({size:150,bg:false});
-if(kind==='lockup') R.innerHTML=`<div style="width:2400px;height:800px;background:radial-gradient(circle at 30% 40%,#1B1C21,#0B0B0D);display:flex;align-items:center;gap:70px;padding-left:120px;box-sizing:border-box">
-  ${mark({size:560,bg:false})}<div><div style="font-family:IS;font-size:210px;color:${PAL.ivory};letter-spacing:2px;line-height:1">Lakhometer</div>
+if(kind==='lockup') R.innerHTML=`<div style="width:2400px;height:800px;background:radial-gradient(circle at 30% 40%,#16233A,#090D16);display:flex;align-items:center;gap:70px;padding-left:120px;box-sizing:border-box">
+  ${mark({size:560,bg:false})}<div><div style="font-family:IS;font-size:210px;letter-spacing:2px;line-height:1"><span style="color:#F2ECDD">Lakh</span><span style="background:linear-gradient(180deg,#F7E7B4,#D4AF63 55%,#8C6828);-webkit-background-clip:text;color:transparent">ometer</span></div>
   <div style="font-family:IN;font-weight:600;font-size:40px;letter-spacing:22px;color:${PAL.gold2};margin-top:26px">MONEY, MEASURED.</div></div></div>`;
 window.ready=true;
 </script></body></html>
