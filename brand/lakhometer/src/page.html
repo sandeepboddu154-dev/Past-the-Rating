@@ -6,7 +6,7 @@
 html,body{margin:0;background:transparent}
 </style></head><body><div id="root"></div>
 <script type="module">
-import {mark,PAL} from './mark.js';
+const {mark,PAL}=await import('./'+(new URLSearchParams(location.search).get('m')||'mark')+'.js');
 const q=new URLSearchParams(location.search), kind=q.get('k');
 const R=document.getElementById('root');
 if(kind==='profile') R.innerHTML=mark({size:800});
