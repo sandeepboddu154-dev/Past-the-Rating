@@ -5,9 +5,9 @@
 **Personality:** a private bank's precision with a museum curator's calm. Quiet confidence; never loud, never "get-rich".
 
 ## Identity
-- **Mark:** a precision **gold rupee gauge**: a 240° gold dial whose needle swings into a green "growth" zone, with a custom ₹ as the readout. "Lakh-o-meter" in one picture.
-- **Wordmark:** "Lakhometer" in Instrument Serif. Sentence case, generous spacing.
-- **Lockup:** mark + wordmark + "MONEY, MEASURED." in widely tracked Inter caps.
+- **Mark:** a gold serif **L monogram** with three rising bars in its corner, wrapped by a **meter arc** (with gauge ticks) that sweeps under the L and rises into a green growth arrow breaking out of a fine gold ring. Background: deep navy with an emerald glow.
+- **Wordmark:** "LAKHOMETER" in Instrument Serif capitals, gold gradient, wide tracking.
+- **Lockup:** mark + wordmark + "MEASURE ◆ PLAN ◆ GROW" in tracked Inter caps. (Spoken/video sign-off stays "Money, measured.")
 
 ## Palette (use sparingly: onyx dominates, gold is jewellery)
 | Name | Hex | Use |
@@ -37,4 +37,4 @@
 | `banner_2560x1440.jpg` | YouTube banner (key content inside the 1546×423 safe area) |
 | `watermark_150.png` | Video watermark (transparent) |
 | `lockup_2400x800.png` | Horizontal logo for social, decks, sponsors |
-Source: `brand/lakhometer/src/` (`mark3.js` draws the mark as code, so it's re-renderable at any size).
+Source: `brand/lakhometer/src/` (`mark4.js` draws the mark as code, so it's re-renderable at any size).
