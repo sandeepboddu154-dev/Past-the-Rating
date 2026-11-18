@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:'IS';src:url(../fonts/instrument-serif-latin-400-normal.woff2)}
+@font-face{font-family:'IS';font-style:italic;src:url(../fonts/instrument-serif-latin-400-italic.woff2)}
+@font-face{font-family:'IN';font-weight:600;src:url(../fonts/inter-latin-600-normal.woff2)}
+html,body{margin:0;width:2560px;height:1440px;overflow:hidden;background:#0B0B0D}
+canvas{position:absolute;left:0;top:0}.l{position:absolute;white-space:nowrap}
+.tag{font-family:'IN','Inter Display',sans-serif;font-weight:600;font-size:22px;letter-spacing:3px;color:#CBA65C;transform:translateX(-50%)}
+</style></head><body>
+<div class="l" style="left:540px;top:548px;display:flex;align-items:center;gap:46px">
+ <div id="mk"></div>
+ <div><div style="font-family:IS;font-size:132px;color:#F2ECDD;line-height:1;letter-spacing:1px">Lakhometer</div>
+  <div style="font-family:IN;font-weight:600;font-size:28px;letter-spacing:16px;color:#CBA65C;margin-top:20px">MONEY, MEASURED.</div>
+  <div style="font-family:IS;font-style:italic;font-size:40px;color:#8E8A7E;margin-top:22px">Salaries, SIPs, loans &amp; fortunes, built to their real size.</div></div>
+</div><div id="labels"></div>
+<script type="importmap">{"imports":{"three":"/Lab_MoneyToScale/node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import {mark} from './mark.js';
+import {THREE,bundleColumn,toScreen} from '/brand/money_to_scale/src/mts3d.js';
+document.getElementById('mk').innerHTML=mark({size:250,bg:false});
+const W=2560,H=1440; const r=new THREE.WebGLRenderer({antialias:true}); r.setSize(W,H); r.shadowMap.enabled=true; r.shadowMap.type=THREE.PCFSoftShadowMap;
+r.toneMapping=THREE.ACESFilmicToneMapping; r.toneMappingExposure=1.05; r.outputColorSpace=THREE.SRGBColorSpace; document.body.prepend(r.domElement);
+const s=new THREE.Scene(); s.background=new THREE.Color(0x0B0B0D); s.fog=new THREE.Fog(0x0B0B0D,24,44);
+s.add(new THREE.HemisphereLight(0xfff3dc,0x0b0b0d,0.18));
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshStandardMaterial({color:0x101114,roughness:.32,metalness:.35})); floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; s.add(floor);
+const xs=[0.0,1.15,2.3], vals=[1e5,1e6,1e7], labs=['₹1 LAKH','₹10 LAKH','₹1 CRORE'];
+xs.forEach((x,i)=>{ s.add(bundleColumn(vals[i]/50000,{x}));
+  const sp=new THREE.SpotLight(0xffe2a8,60,9,0.32,0.55,1.4); sp.position.set(x+.25,4.2,1.4); sp.target.position.set(x,0,0); sp.castShadow=true; sp.shadow.mapSize.set(1024,1024); s.add(sp,sp.target);
+  const pool=new THREE.Mesh(new THREE.CircleGeometry(.42,48),new THREE.MeshBasicMaterial({color:0xCBA65C,transparent:true,opacity:.05})); pool.rotation.x=-Math.PI/2; pool.position.set(x,.002,0); s.add(pool); });
+// gold measuring rod, 2.2 m, with engraved graduations
+const gm=new THREE.MeshStandardMaterial({color:0xCBA65C,metalness:.6,roughness:.3,emissive:0x5a4318,emissiveIntensity:.9}); const rod=new THREE.Group();
+const pole=new THREE.Mesh(new THREE.BoxGeometry(.035,2.2,.02),gm); pole.position.y=1.1; rod.add(pole);
+for(let y=0;y<=2.2001;y+=0.1){ const t=new THREE.Mesh(new THREE.BoxGeometry(Math.round(y*10)%5===0?.12:.07,.008,.02),gm); t.position.set(-.04,y,0); rod.add(t); }
+rod.position.set(3.25,0,0); s.add(rod); const rl=new THREE.SpotLight(0xffe2a8,30,9,0.25,0.6,1.4); rl.position.set(3.4,4,1.4); rl.target=rod; s.add(rl);
+const cam=new THREE.PerspectiveCamera(22,W/H,0.05,200); cam.position.set(1.62,1.55,25.5); cam.lookAt(1.62,0.95,0); cam.setViewOffset(W,H,-420,5,W,H); cam.updateMatrixWorld();
+r.render(s,cam);
+const add=(x,y,t)=>{const d=document.createElement('div');d.className='l tag';d.style.left=x+'px';d.style.top=y+'px';d.textContent=t;document.getElementById('labels').appendChild(d);};
+xs.forEach((x,i)=>{const q=toScreen(new THREE.Vector3(x,0,0.12),cam,W,H); add(q.x,q.y+12,labs[i]);});
+const q2=toScreen(new THREE.Vector3(3.25,2.2,0),cam,W,H); add(q2.x+70,q2.y-4,'2.2 m');
+window.ready=true;
+</script></body></html>
