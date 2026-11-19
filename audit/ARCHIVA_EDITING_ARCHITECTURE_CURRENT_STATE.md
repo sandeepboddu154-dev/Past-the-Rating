@@ -56,7 +56,7 @@ The strength is the **timeline-centric design**: every downstream step (frames, 
 
 ### Hard-coded / tightly coupled items
 - Absolute paths, including a *previous session's* scratchpad: `finish_1080.sh:4,16,17`.
-- Project text baked into the engine: `'CASE 001 · HYATT REGENCY · KANSAS CITY 1981'` in `hud()`; `NOHUD` scene IDs in `timeline.py:21`.
+- Project text baked into the engine: `'CASE 001 · HYATT REGENCY · KANSAS CITY 1981'` in `hud()` (`engine.html:481`); `NOHUD` scene IDs in `timeline.py:21`.
 - SFX and music cue tables are code (`mix.py`, `shorts_mix.py`), so each video needs a code edit.
 - The visual engine is a monolith per project (35–43 KB HTML each). Scenes can't be reused without copy-paste.
 - The MTS render depends on a manually started HTTP server and on gitignored `node_modules`.

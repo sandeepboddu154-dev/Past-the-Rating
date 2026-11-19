@@ -53,7 +53,7 @@ Rendering itself is not FFmpeg: Chromium screenshots each frame as JPEG at quali
 | Source | `qc_longform.json` | `MTS_Video_001/Production_Report/qc.json`; ffprobe of committed `Final_Exports/MTS001_1Crore_1080p.mp4` (444.33 s, 52.3 MB) |
 
 ## E. Performance bottlenecks
-1. **Screenshot-per-frame rendering** is the dominant cost. Each frame does a DOM rebuild with `innerHTML` (`engine.html:492`), then a JPEG screenshot, then an MJPEG decode, then x264. The report states ≈65 min CPU for 8:23 at 4K (production_report.md §6). MTS adds WebGL through SwiftShader (software GPU, `MTS render.js:7`), which is slower again.
+1. **Screenshot-per-frame rendering** is the dominant cost. Each frame does a DOM rebuild with `innerHTML` (`engine.html:494`), then a JPEG screenshot, then an MJPEG decode, then x264. The report states ≈65 min CPU for 8:23 at 4K (production_report.md §6). MTS adds WebGL through SwiftShader (software GPU, `MTS render.js:7`), which is slower again.
 2. **Parallelism is limited**: 2–3 Playwright pages × `threads=2` x264 (`render.js:48,61`).
 3. **QC decodes the full file 3 times** (Q2 twice, Q3 once).
 4. Caching per segment (`render.js:55-57`, key = segment JSON + engine hash + width) works well and avoids re-renders.
